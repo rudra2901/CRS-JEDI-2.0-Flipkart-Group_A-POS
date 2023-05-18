@@ -35,3 +35,9 @@ Binding(COMMAND+SHIFT+T,
 
 !ENTRY org.springframework.tooling.boot.ls 1 0 2023-05-18 14:57:57.076
 !MESSAGE Classpath changed for project: JEDI-2.0-Group-A-Java-Application
+
+!ENTRY org.springframework.tooling.boot.ls 1 0 2023-05-18 15:07:55.038
+!MESSAGE DelegatingStreamConnectionProvider - Starting Boot LS
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2023-05-18 15:07:55.059
+!MESSAGE Started org.springframework.tooling.boot.ls LS process 58799
