@@ -1,0 +1,14 @@
+/**
+ * 
+ */
+package com.flipkart.bean;
+
+/**
+ * @author rudra.tiwari
+ *
+ */
+public class Payment {
+	
+	private int studentID;
+	private int reference
+}
