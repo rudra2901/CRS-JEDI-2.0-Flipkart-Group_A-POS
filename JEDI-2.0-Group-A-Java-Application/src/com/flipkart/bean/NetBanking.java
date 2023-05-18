@@ -1,37 +1,33 @@
-/**
- * 
- */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class NetBanking extends Online {
-	
-	private String modeOfTransaction;
-	private int accountNumber;
-	private String IFSCcode;
-	
-	
-	public String getModeOfTransaction() {
-		return modeOfTransaction;
+public class NetBanking {
+
+	private String ModeOfTransfer;
+	private String AccountNumber;
+	private String IFSC;
+
+	public String getModeOfTransfer() {
+		return ModeOfTransfer;
 	}
-	public void setModeOfTransaction(String modeOfTransaction) {
-		this.modeOfTransaction = modeOfTransaction;
+
+	public void setModeOfTransfer(String modeOfTransfer) {
+		ModeOfTransfer = modeOfTransfer;
 	}
-	
-	public int getAccountNumber() {
-		return accountNumber;
+
+	public String getAccountNumber() {
+		return AccountNumber;
 	}
-	public void setAccountNumber(int accountNumber) {
-		this.accountNumber = accountNumber;
+
+	public void setAccountNumber(String accountNumber) {
+		AccountNumber = accountNumber;
 	}
-	
-	public String getIFSCcode() {
-		return IFSCcode;
+
+	public String getIFSC() {
+		return IFSC;
 	}
-	public void setIFSCcode(String iFSCcode) {
-		IFSCcode = iFSCcode;
+
+	public void setIFSC(String iFSC) {
+		IFSC = iFSC;
 	}
+
 }

@@ -1,13 +1,13 @@
 /**
  * 
  */
-package com.flipkart.business;
+package com.flipkart.service;
 
 /**
  * @author rudra.tiwari
  *
  */
-public class StudentBusiness {
+public class StudentOperationService {
 	
 	public boolean changePasswd(){
 		return true;
@@ -21,7 +21,13 @@ public class StudentBusiness {
 		return;
 	}
 	
+	public void adddCourse(){
+		return;
+	}
 	
+	public void dropCourse(){
+		return;
+	}
 	
 
 }

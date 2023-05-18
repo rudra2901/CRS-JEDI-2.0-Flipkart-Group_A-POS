@@ -1,6 +1,6 @@
-package com.flipkart.business;
+package com.flipkart.service;
 
-public class ProffBuisness {
+public class ProfessorOperationService {
 	
 	public void viewEnrolledStudent() {
 		return;
