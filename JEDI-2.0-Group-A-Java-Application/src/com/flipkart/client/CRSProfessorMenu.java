@@ -17,7 +17,7 @@ public class CRSProfessorMenu {
 		Scanner in = new Scanner(System.in);
 		
 		int input;
-		boolean loggedin = false;
+		boolean loggedin = true;
 		while (loggedin) {
 			System.out.println("--------------------------------");
 			System.out.println("-------Professor Menu-----------");

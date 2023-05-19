@@ -18,7 +18,7 @@ public class CRSAdminMenu {
 	 */
 public void createMenu(){
 		
-		boolean loggedin = false;
+		boolean loggedin = true;
 		while(loggedin) {
 			System.out.println("*****************************");
 			System.out.println("**********Admin Menu*********");

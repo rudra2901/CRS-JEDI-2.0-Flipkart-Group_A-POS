@@ -15,7 +15,7 @@ public class CRSStudentMenu {
 	public void create_menu(String studentId) {
 
 		
-		boolean loggedin = false;
+		boolean loggedin = true;
 		while (loggedin) {
 
 			System.out.println("*****************************");

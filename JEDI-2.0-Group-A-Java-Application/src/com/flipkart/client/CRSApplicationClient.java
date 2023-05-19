@@ -56,10 +56,20 @@ public class CRSApplicationClient {
 	}
 
 	public void loginUser() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("-----------------Login------------------");
+		System.out.println("Email:");
+		String userId = sc.next();
+		System.out.println("Password:");
+	    String password = sc.next();
+	    System.out.println("Role:");
+	    String role = sc.next();
+		loggedin = true;
+		
 
 		if (loggedin) {
 
-			String role = null;
+//			String role = null;
 
 			switch (role) {
 			case "ADMIN":
