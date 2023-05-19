@@ -1,4 +1,0 @@
-INDEX VERSION 1.132+/Users/pulkit.bhargava/Desktop/Flipkart-Project-Repo-Group-A/.metadata/.plugins/org.eclipse.jdt.core
-364355689.index
-523831654.index
-1865797976.index
