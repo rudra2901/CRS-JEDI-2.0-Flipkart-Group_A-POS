@@ -1,6 +1,6 @@
 package com.flipkart.service;
 
-public class AdminOperationService {
+public class AdminOperationService implements AdminOperationInterface {
 	
 	public void addProff() {
 		return;
