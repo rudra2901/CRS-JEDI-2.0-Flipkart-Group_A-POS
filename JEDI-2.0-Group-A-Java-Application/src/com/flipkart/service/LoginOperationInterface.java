@@ -8,5 +8,8 @@ package com.flipkart.service;
  *
  */
 public interface LoginOperationInterface {
+	
 	public boolean isApproved();
+	public void login() ;
+	public void logout(); 
 }
