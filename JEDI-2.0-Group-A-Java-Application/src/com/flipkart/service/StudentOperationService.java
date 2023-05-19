@@ -7,7 +7,7 @@ package com.flipkart.service;
  * @author rudra.tiwari
  *
  */
-public class StudentOperationService {
+public class StudentOperationService implements StudentOperationServiceInterface{
 	
 	public boolean changePasswd(){
 		return true;
