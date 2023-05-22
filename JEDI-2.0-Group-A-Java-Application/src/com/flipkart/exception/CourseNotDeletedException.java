@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author Tanishq
+ * @author aaryan.pawar
  *
  */
 public class CourseNotDeletedException extends Exception {

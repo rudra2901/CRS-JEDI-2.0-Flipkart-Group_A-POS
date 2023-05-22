@@ -3,7 +3,7 @@ package com.flipkart.exception;
 
 /**
  * Exception to check if user exists 
- * @author Tribhav Chaudhary
+ * @author aaryan.pawar
  *
  */
 public class UserNotFoundException extends Exception {
