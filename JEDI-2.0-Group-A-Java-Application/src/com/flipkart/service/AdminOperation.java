@@ -9,8 +9,8 @@ import com.flipkart.validator.AdminValidator;
 import java.util.List;
 
 import com.flipkart.bean.*;
-import com.flipkart.dao.AdminDaoInterface;
-import com.flipkart.dao.AdminDaoOperation;
+import com.flipkart.dao.AdminDAOInterface;
+import com.flipkart.dao.AdminDAOImple;
 
 
 public class AdminOperation implements AdminInterface{
@@ -37,7 +37,7 @@ public class AdminOperation implements AdminInterface{
 		return instance;
 	}
 	
-	AdminDaoInterface adminDaoOperation =AdminDaoOperation.getInstance();
+	AdminDAOInterface adminDaoOperation =AdminDAOImple.getInstance();
 	
 	
 	public List<Course> viewCourses()

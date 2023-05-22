@@ -20,7 +20,7 @@ import com.flipkart.exception.UserNotAddedException;
 import com.flipkart.exception.UserNotFoundException;
 
 
-public interface AdminDaoInterface {
+public interface AdminDAOInterface {
 	
 	public List<Course> viewCourses();
 	public List<Professor> viewProfessors();

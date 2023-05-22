@@ -15,28 +15,28 @@ import com.flipkart.exception.CourseNotFoundException;
 import com.flipkart.utils.DBUtils;
 
 
-public class RegistrationDaoOperation implements RegistrationDaoInterface{
+public class RegistrationDAOImple implements RegistrationDAOInterface{
     
 	
-	private static volatile RegistrationDaoOperation instance=null;
+	private static volatile RegistrationDAOImple instance=null;
 //	private static Logger logger = Logger.getLogger(RegistrationDaoOperation.class);
 	private PreparedStatement stmt = null;
 	
 	/**
 	 * Default Constructor
 	 */
-	private RegistrationDaoOperation() {}
+	private RegistrationDAOImple() {}
 	
 	/**
 	 * Method to make RegistrationDaoOperation Singleton
 	 * @return
 	 */
-	public static RegistrationDaoOperation getInstance()
+	public static RegistrationDAOImple getInstance()
 	{
 		if(instance==null)
 		{
-			synchronized(RegistrationDaoOperation.class){
-				instance=new RegistrationDaoOperation();
+			synchronized(RegistrationDAOImple.class){
+				instance=new RegistrationDAOImple();
 			}
 		}
 		return instance;

@@ -2,8 +2,8 @@ package com.flipkart.service;
 
 import com.flipkart.bean.SemRegistration;
 import com.flipkart.constant.RoleConstant;
-import com.flipkart.dao.StudentDaoInterface;
-import com.flipkart.dao.StudentDaoOperation;
+import com.flipkart.dao.StudentDAOInterface;
+import com.flipkart.dao.StudentDAOImple;
 import com.flipkart.exception.StudentNotRegisteredException;
 import com.flipkart.bean.Student;
 import com.flipkart.client.CRSApplication;
@@ -13,7 +13,7 @@ public class StudentOperation implements StudentInterface {
 	
 	private static volatile StudentOperation instance=null;
 	
-	StudentDaoInterface studentDaoInterface=StudentDaoOperation.getInstance();
+	StudentDAOInterface studentDaoInterface=StudentDAOImple.getInstance();
 
 	private StudentOperation()
 	{

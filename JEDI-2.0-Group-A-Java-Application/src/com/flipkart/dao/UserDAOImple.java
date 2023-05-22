@@ -10,14 +10,14 @@ import com.flipkart.constant.SQLQueriesConstant;
 import com.flipkart.exception.UserNotFoundException;
 import com.flipkart.utils.DBUtils;
 
-public class UserDaoOperation implements UserDaoInterface{
-	private static volatile UserDaoOperation instance=null;
+public class UserDAOImple implements UserDAOInterface{
+	private static volatile UserDAOImple instance=null;
 //	private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
 	/**
 	 * Default Constructor
 	 */
-	private UserDaoOperation()
+	private UserDAOImple()
 	{
 		
 	}
@@ -26,13 +26,13 @@ public class UserDaoOperation implements UserDaoInterface{
 	 * Method to make UserDaoOperation Singleton
 	 * @return
 	 */
-	public static UserDaoOperation getInstance()
+	public static UserDAOImple getInstance()
 	{
 		if(instance==null)
 		{
 			// This is a synchronized block, when multiple threads will access this instance
-			synchronized(UserDaoOperation.class){
-				instance=new UserDaoOperation();
+			synchronized(UserDAOImple.class){
+				instance=new UserDAOImple();
 			}
 		}
 		return instance;

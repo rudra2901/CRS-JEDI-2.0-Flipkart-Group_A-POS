@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import com.flipkart.constant.NotificationTypeConstant;
 import com.flipkart.constant.PaymentModeConstant;
 
-public interface NotificationDaoInterface {
+public interface NotificationDAOInterface {
 
 	/**
 	 * Send Notification using SQL commands

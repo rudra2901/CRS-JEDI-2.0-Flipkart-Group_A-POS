@@ -16,15 +16,15 @@ import com.flipkart.exception.StudentNotRegisteredException;
 import com.flipkart.utils.DBUtils;
 
 
-public class StudentDaoOperation implements StudentDaoInterface {
+public class StudentDAOImple implements StudentDAOInterface {
 	
-	private static volatile StudentDaoOperation instance=null;
+	private static volatile StudentDAOImple instance=null;
 //	private static Logger logger = Logger.getLogger(StudentDaoOperation.class);
 
 	/**
 	 * Default Constructor
 	 */
-	private StudentDaoOperation()
+	private StudentDAOImple()
 	{
 		
 	}
@@ -33,13 +33,13 @@ public class StudentDaoOperation implements StudentDaoInterface {
 	 * Method to make StudentDaoOperation Singleton
 	 * @return
 	 */
-	public static StudentDaoOperation getInstance()
+	public static StudentDAOImple getInstance()
 	{
 		if(instance==null)
 		{
 			// This is a synchronized block, when multiple threads will access this instance
-			synchronized(StudentDaoOperation.class){
-				instance=new StudentDaoOperation();
+			synchronized(StudentDAOImple.class){
+				instance=new StudentDAOImple();
 			}
 		}
 		return instance;

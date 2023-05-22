@@ -12,15 +12,15 @@ import com.flipkart.bean.EnrolledStudent;
 import com.flipkart.constant.SQLQueriesConstant;
 import com.flipkart.utils.DBUtils;
 
-public class ProfessorDaoOperation implements ProfessorDaoInterface {
+public class ProfessorDAOImple implements ProfessorDAOInterface {
 
-	private static volatile ProfessorDaoOperation instance=null;
+	private static volatile ProfessorDAOImple instance=null;
 //	private static Logger logger = Logger.getLogger(UserDaoOperation.class);
 
 	/**
 	 * Default Constructor
 	 */
-	private ProfessorDaoOperation()
+	private ProfessorDAOImple()
 	{
 		
 	}
@@ -29,13 +29,13 @@ public class ProfessorDaoOperation implements ProfessorDaoInterface {
 	 * Method to make ProfessorDaoOperation Singleton
 	 * @return
 	 */
-	public static ProfessorDaoOperation getInstance()
+	public static ProfessorDAOImple getInstance()
 	{
 		if(instance==null)
 		{
 			// This is a synchronized block, when multiple threads will access this instance
-			synchronized(ProfessorDaoOperation.class){
-				instance=new ProfessorDaoOperation();
+			synchronized(ProfessorDAOImple.class){
+				instance=new ProfessorDAOImple();
 			}
 		}
 		return instance;

@@ -36,27 +36,27 @@ import com.flipkart.utils.DBUtils;
  */
 
 
-public class AdminDaoOperation implements AdminDaoInterface{
+public class AdminDAOImple implements AdminDAOInterface{
 	
-	private static volatile AdminDaoOperation instance = null;
+	private static volatile AdminDAOImple instance = null;
 	//private static Logger logger = Logger.getLogger(AdminDaoOperation.class);
 	private PreparedStatement statement = null;
 	
 	/**
 	 * Default Constructor
 	 */
-	private AdminDaoOperation(){}
+	private AdminDAOImple(){}
 	
 	/**
 	 * Method to make AdminDaoOperation Singleton
 	 * @return
 	 */
-	public static AdminDaoOperation getInstance()
+	public static AdminDAOImple getInstance()
 	{
 		if(instance == null)
 		{
-			synchronized(AdminDaoOperation.class){
-				instance = new AdminDaoOperation();
+			synchronized(AdminDAOImple.class){
+				instance = new AdminDAOImple();
 			}
 		}
 		return instance;

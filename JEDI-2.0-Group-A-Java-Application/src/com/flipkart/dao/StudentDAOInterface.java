@@ -9,7 +9,7 @@ import com.flipkart.bean.Student;
 import com.flipkart.exception.StudentNotRegisteredException;
 
 
-public interface StudentDaoInterface {
+public interface StudentDAOInterface {
 	
 	
 	/**

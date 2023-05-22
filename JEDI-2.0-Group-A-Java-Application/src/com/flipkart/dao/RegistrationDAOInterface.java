@@ -8,7 +8,7 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.Grade;
 
 
-public interface RegistrationDaoInterface {
+public interface RegistrationDAOInterface {
 	
 	
 	/**

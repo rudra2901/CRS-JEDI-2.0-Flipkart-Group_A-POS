@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import java.util.List;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
-import com.flipkart.dao.ProfessorDaoInterface;
-import com.flipkart.dao.ProfessorDaoOperation;
+import com.flipkart.dao.ProfessorDAOInterface;
+import com.flipkart.dao.ProfessorDAOImple;
 import com.flipkart.exception.GradeNotAllotedException;
 
 
 public class ProfessorOperation implements ProfessorInterface {
 	
 	private static volatile ProfessorOperation instance=null;
-	ProfessorDaoInterface professorDAOInterface=ProfessorDaoOperation.getInstance();
+	ProfessorDAOInterface professorDAOInterface=ProfessorDAOImple.getInstance();
 	private ProfessorOperation()
 	{
 

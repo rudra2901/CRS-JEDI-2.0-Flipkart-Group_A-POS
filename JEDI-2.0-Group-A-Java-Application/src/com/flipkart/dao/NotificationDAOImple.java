@@ -17,16 +17,16 @@ import com.flipkart.constant.PaymentModeConstant;
 import com.flipkart.constant.SQLQueriesConstant;
 import com.flipkart.utils.DBUtils;
 
-public class NotificationDaoOperation implements NotificationDaoInterface{
+public class NotificationDAOImple implements NotificationDAOInterface{
 
 	
-	private static volatile NotificationDaoOperation instance=null;
+	private static volatile NotificationDAOImple instance=null;
 //	private static Logger logger = Logger.getLogger(NotificationDaoOperation.class);
 
 	/**
 	 * Default Constructor
 	 */
-	private NotificationDaoOperation()
+	private NotificationDAOImple()
 	{
 
 	}
@@ -35,13 +35,13 @@ public class NotificationDaoOperation implements NotificationDaoInterface{
 	 * Method to make NotificationDaoOperation Singleton
 	 * @return
 	 */
-	public static NotificationDaoOperation getInstance()
+	public static NotificationDAOImple getInstance()
 	{
 		if(instance==null)
 		{
 			// This is a synchronized block, when multiple threads will access this instance
-			synchronized(NotificationDaoOperation.class){
-				instance=new NotificationDaoOperation();
+			synchronized(NotificationDAOImple.class){
+				instance=new NotificationDAOImple();
 			}
 		}
 		return instance;

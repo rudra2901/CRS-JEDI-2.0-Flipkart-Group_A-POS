@@ -2,7 +2,7 @@ package com.flipkart.dao;
 
 import com.flipkart.exception.UserNotFoundException;
 
-public interface UserDaoInterface {
+public interface UserDAOInterface {
 	
 	/**
 	 * Method to verify credentials of Users from DataBase
