@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author Tanishq
+ * @author rudra.tiwari
  *
  */
 public class CourseAlreadyRegisteredException extends Exception{

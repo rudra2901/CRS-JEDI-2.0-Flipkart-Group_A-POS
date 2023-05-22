@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author Tanishq
+ * @author vedant.patel
  *
  */
 public class CourseNotFoundException extends Exception{

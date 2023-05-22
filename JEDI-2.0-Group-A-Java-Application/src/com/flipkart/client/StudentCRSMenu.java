@@ -17,7 +17,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * @author vijayrathod
+ * @author vedant.patel
  *
  */
 public class StudentCRSMenu {

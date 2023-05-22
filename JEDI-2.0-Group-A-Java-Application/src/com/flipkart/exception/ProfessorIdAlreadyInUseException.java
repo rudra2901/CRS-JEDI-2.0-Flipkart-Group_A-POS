@@ -1,7 +1,7 @@
 package com.flipkart.exception;
 
 /**
- * @author Tribhav Chaudhary
+ * @author rudra.tiwari
  *
  */
 public class ProfessorIdAlreadyInUseException extends Exception{
