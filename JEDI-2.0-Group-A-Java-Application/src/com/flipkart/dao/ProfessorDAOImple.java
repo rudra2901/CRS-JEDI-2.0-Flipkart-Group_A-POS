@@ -131,6 +131,8 @@ public class ProfessorDAOImple implements ProfessorDAOInterface {
 			statement.setString(2, courseCode);
 			statement.setString(3, studentId);
 			
+//			System.out.println(statement);
+			
 			int row = statement.executeUpdate();
 			
 			if(row==1)
