@@ -38,97 +38,116 @@ public class ProfessorCRSMenu {
 		
 		int input;
 		while (CRSApplication.loggedin) {
-			System.out.println("-------Professor Menu-----------");
-			System.out.println("\n\n");
-			System.out.println("1. view Courses");
-			System.out.println("2. view Enrolled Students");
-			System.out.println("3. add Grades");
-			System.out.println("4. logout");
-			System.out.println("\n\n");
-			System.out.printf("Choose From Menu: ");
-			
-			input = in.nextInt();
-			switch (input) {
-			case 1:
-				getCourses(profID);
-				break;
-			case 2:
-				viewEnrolledStudents(profID);
-				break;
-			case 3:
-				addGrade(profID);
-				break;
-			case 4:
-				CRSApplication.loggedin = false;
-				return;
-			default:
-				System.out.println("Please select appropriate option...");
-			}
+		    System.out.println("+---------------------------+");
+		    System.out.println("|     Professor Menu        |");
+		    System.out.println("+---------------------------+");
+		    System.out.println("|                           |");
+		    System.out.println("| 1. View Courses           |");
+		    System.out.println("| 2. View Enrolled Students |");
+		    System.out.println("| 3. Add Grades             |");
+		    System.out.println("| 4. Logout                 |");
+		    System.out.println("|                           |");
+		    System.out.println("+---------------------------+");
+		    System.out.print("Choose From Menu: ");
+
+		    input = in.nextInt();
+		    switch (input) {
+		        case 1:
+		            getCourses(profID);
+		            break;
+		        case 2:
+		            viewEnrolledStudents(profID);
+		            break;
+		        case 3:
+		            addGrade(profID);
+		            break;
+		        case 4:
+		            CRSApplication.loggedin = false;
+		            return;
+		        default:
+		            System.out.println("Please select an appropriate option...");
+		    }
 		}
+
 		in.close();
 	}
 	
 	public void viewEnrolledStudents(String profID) {
-		System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE NAME","Student" ));
+		System.out.println("+------------------------------------------------------------+");
+		System.out.println("|             View Enrolled Students - Professor             |");
+		System.out.println("+------------------------------------------------------------+");
+		System.out.println("|    COURSE CODE    |    COURSE NAME    |      Student       |");
 		try {
-			List<EnrolledStudent> enrolledStudents = new ArrayList<EnrolledStudent>();
-			enrolledStudents = professorInterface.viewEnrolledStudents(profID);
-			for (EnrolledStudent obj: enrolledStudents) {
-				System.out.println(String.format("%20s %20s %20s",obj.getCourseCode(), obj.getCourseName(),obj.getStudentId()));
-			}
-			
-		} catch(Exception ex) {
-			System.out.println(ex.getMessage()+"Something went wrong, please try again later!");
+		    List<EnrolledStudent> enrolledStudents = new ArrayList<EnrolledStudent>();
+		    enrolledStudents = professorInterface.viewEnrolledStudents(profID);
+		    for (EnrolledStudent obj : enrolledStudents) {
+		        System.out.println(String.format("| %17s | %17s | %17s |", obj.getCourseCode(), obj.getCourseName(), obj.getStudentId()));
+		    }
+
+		} catch (Exception ex) {
+		    System.out.println("\u001B[31m" + ex.getMessage() + " Something went wrong, please try again later!\u001B[0m");
 		}
+		System.out.println("+------------------------------------------------------------+");
+
 	}
 	
 	public void getCourses(String profId) {
+		System.out.println("+-----------------------------------------------------------------------+");
+		System.out.println("|                      View Enrolled Courses - Professor                 |");
+		System.out.println("+-----------------------------------------------------------------------+");
+		System.out.println("|     COURSE CODE     |     COURSE NAME     |     No. of Students Enrolled     |");
 		try {
-			List<Course> coursesEnrolled = professorInterface.viewCourses(profId);
-			System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE NAME","No. of Students" ));
-			for(Course obj: coursesEnrolled) {
-				System.out.println(String.format("%20s %20s %20s",obj.getCourseCode(), obj.getCourseName(),10- obj.getSeats()));
-			}		
-		} catch(Exception ex) {
-			System.out.println("Something went wrong!"+ex.getMessage());
+		    List<Course> coursesEnrolled = professorInterface.viewCourses(profId);
+		    for (Course obj : coursesEnrolled) {
+		        System.out.println(String.format("| %18s | %18s | %30s |", obj.getCourseCode(), obj.getCourseName(), 10 - obj.getSeats()));
+		    }
+		} catch (Exception ex) {
+		    System.out.println("\u001B[31mSomething went wrong! " + ex.getMessage() + "\u001B[0m");
 		}
+		System.out.println("+-----------------------------------------------------------------------+");
+
 	}
 	
-	public void addGrade(String profId) {	
-		Scanner in = new Scanner(System.in);
-		
-		String courseCode, grade, studentId;
-		try {
-			List<EnrolledStudent> enrolledStudents = new ArrayList<EnrolledStudent>();
-			enrolledStudents = professorInterface.viewEnrolledStudents(profId);
-			System.out.println(String.format("%20s %20s %20s","COURSE CODE","COURSE NAME","Student ID" ));
-			for (EnrolledStudent obj: enrolledStudents) {
-				System.out.println(String.format("%20s %20s %20s",obj.getCourseCode(), obj.getCourseName(),obj.getStudentId()));
-			}
-			List<Course> coursesEnrolled = new ArrayList<Course>();
-			coursesEnrolled	= professorInterface.viewCourses(profId);
-			System.out.println("---- Add Grade ----");
-			System.out.printf("Enter student id: ");
-			studentId = in.nextLine();
-			System.out.printf("Enter course code: ");
-			courseCode = in.nextLine();
-			System.out.println("Enter grade: ");
-			grade = in.nextLine();
-			if (!(ProfessorValidator.isValidStudent(enrolledStudents, studentId)
-			&& ProfessorValidator.isValidCourse(coursesEnrolled, courseCode))) {
-				professorInterface.addGrade(studentId, courseCode, grade);
-				System.out.println("GradeConstant added successfully for "+studentId);
-			} else {
-				System.out.println("Invalid data entered, try again!");
-			}
-		} catch(GradeNotAllotedException ex) {
-			System.out.println("GradeConstant cannot be added for"+ex.getStudentId());
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
+	public void addGrade(String profId) {
+	    Scanner in = new Scanner(System.in);
+
+	    String courseCode, grade, studentId;
+	    try {
+	        List<EnrolledStudent> enrolledStudents = new ArrayList<EnrolledStudent>();
+	        enrolledStudents = professorInterface.viewEnrolledStudents(profId);
+	        System.out.println("+-----------------------------------------------------------------------+");
+	        System.out.println("|                        View Enrolled Students                          |");
+	        System.out.println("+-----------------------------------------------------------------------+");
+	        System.out.println("|     COURSE CODE     |     COURSE NAME     |        Student ID           |");
+	        for (EnrolledStudent obj : enrolledStudents) {
+	            System.out.println(String.format("| %18s | %18s | %25s |", obj.getCourseCode(), obj.getCourseName(), obj.getStudentId()));
+	        }
+	        System.out.println("+-----------------------------------------------------------------------+");
+
+	        List<Course> coursesEnrolled = new ArrayList<Course>();
+	        coursesEnrolled = professorInterface.viewCourses(profId);
+
+	        System.out.println("---- Add Grade ----");
+	        System.out.print("Enter student id: ");
+	        studentId = in.nextLine();
+	        System.out.print("Enter course code: ");
+	        courseCode = in.nextLine();
+	        System.out.print("Enter grade: ");
+	        grade = in.nextLine();
+
+	        if (!(ProfessorValidator.isValidStudent(enrolledStudents, studentId)
+	                && ProfessorValidator.isValidCourse(coursesEnrolled, courseCode))) {
+	            professorInterface.addGrade(studentId, courseCode, grade);
+	            System.out.println("Grade added successfully for " + studentId);
+	        } else {
+	            System.out.println("\u001B[31mInvalid data entered, try again!\u001B[0m");
+	        }
+	    } catch (GradeNotAllotedException ex) {
+	        System.out.println("\u001B[31mGrade cannot be added for " + ex.getStudentId() + "\u001B[0m");
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    }
 	}
+
 
 }
