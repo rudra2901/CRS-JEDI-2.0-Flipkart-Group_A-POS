@@ -45,15 +45,19 @@ public class StudentCRSMenu {
 			System.out.println("+------------------------+");
 			System.out.println("|     Student Menu       |");
 			System.out.println("+------------------------+");
-			System.out.println("| 1. Semester Registration");
-			System.out.println("| 2. Add Course");
-			System.out.println("| 3. Drop Course");
-			System.out.println("| 4. View Course");
-			System.out.println("| 5. View Registered Courses");
-			System.out.println("| 6. View Grade Card");
-			System.out.println("| 7. Make Payment");
-			System.out.println("| 8. Logout");
-			System.out.println("+------------------------+\n");
+
+			System.out.println("╔═══════════════════════════════╗");
+	        System.out.println("║                               ║");
+	        System.out.println("║ 1. Semester Registration      ║");
+	        System.out.println("║ 2. Add Course                 ║");
+	        System.out.println("║ 3. Drop Course                ║");
+	        System.out.println("║ 4. View Course                ║");
+	        System.out.println("║ 5. View Registered Courses    ║");
+	        System.out.println("║ 6. View Grade Card            ║");
+	        System.out.println("║ 7. Make Payment               ║");
+	        System.out.println("║ 8. Logout                     ║");
+	        System.out.println("║                               ║");
+	        System.out.println("╚═══════════════════════════════╝");
 
 			int choice = sc.nextInt();
 

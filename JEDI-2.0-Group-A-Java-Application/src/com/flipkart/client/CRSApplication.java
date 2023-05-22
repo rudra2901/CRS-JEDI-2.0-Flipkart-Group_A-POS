@@ -88,8 +88,8 @@ public class CRSApplication {
 	 */
 	public static void createMainMenu() {
 	    System.out.println("------------------------------------------------------");
-	    System.out.println("|                Welcome to Course Registration       |");
-	    System.out.println("|                       System                        |");
+	    System.out.println("|        Welcome to Course Registration System        |");
+	    System.out.println("|                                                     |");
 	    System.out.println("------------------------------------------------------");
 	    System.out.println("|   1. Login                                          |");
 	    System.out.println("|   2. Student Registration                           |");
@@ -128,7 +128,7 @@ public class CRSApplication {
 		loggedin = userInterface.verifyCredentials(userId, password);
 
 
-			//2 cases1
+		//2 cases1
 			
 			
 		if (loggedin) {
@@ -181,10 +181,14 @@ public class CRSApplication {
 
 			
 		}
-		catch(UserNotFoundException ex)
-		{
-			System.out.println(ex.getMessage());
+		catch (UserNotFoundException ex) {
+		    System.out.println("\u001B[31m" + "+------------------------------------+" + "\u001B[0m");
+		    System.out.println("\u001B[31m" + "|                                    |" + "\u001B[0m");
+		    System.out.println("\u001B[31m" + "|     " + ex.getMessage() + "" + "\u001B[0m");
+		    System.out.println("\u001B[31m" + "|                                    |" + "\u001B[0m");
+		    System.out.println("\u001B[31m" + "+------------------------------------+" + "\u001B[0m");
 		}
+
 		
 	}
 	

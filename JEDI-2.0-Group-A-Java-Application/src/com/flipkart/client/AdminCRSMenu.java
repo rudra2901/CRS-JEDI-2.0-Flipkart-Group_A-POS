@@ -55,17 +55,20 @@ public class AdminCRSMenu {
 	        System.out.println("+-----------------+");
 	        System.out.println("|   Admin Menu    |");
 	        System.out.println("+-----------------+");
-	        System.out.println("\n");
-	        System.out.println("1. View course in catalog");
-	        System.out.println("2. Add Course to catalog");
-	        System.out.println("3. Delete Course from catalog");
-	        System.out.println("4. Approve Students");
-	        System.out.println("5. View Pending Approvals");
-	        System.out.println("6. Add Professor");
-	        System.out.println("7. Assign Professor To Courses");
-	        System.out.println("8. Generate Report Card");
-	        System.out.println("9. Logout");
-	        System.out.println("\n");
+	        System.out.println("╔═══════════════════════════════╗");
+	        System.out.println("║                               ║");
+	        System.out.println("║ 1. View course in catalog     ║");
+	        System.out.println("║ 2. Add Course to catalog      ║");
+	        System.out.println("║ 3. Delete Course from catalog ║");
+	        System.out.println("║ 4. Approve Students           ║");
+	        System.out.println("║ 5. View Pending Approvals     ║");
+	        System.out.println("║ 6. Add Professor              ║");
+	        System.out.println("║ 7. Assign Professor To Courses║");
+	        System.out.println("║ 8. Generate Report Card       ║");
+	        System.out.println("║ 9. Logout                     ║");
+	        System.out.println("║                               ║");
+	        System.out.println("╚═══════════════════════════════╝");
+
 
 	        int choice = in.nextInt();
 
@@ -158,25 +161,33 @@ public class AdminCRSMenu {
 	 */
 	private void assignCourseToProfessor() {
 	    List<Professor> professorList = adminOperation.viewProfessors();
-	    System.out.println("+------------------------------------+");
-	    System.out.println("|    Assign Course to Professor       |");
-	    System.out.println("+------------------------------------+");
+	    System.out.println("+" + "-".repeat(67) + "+");
+	    System.out.println("|" + " ".repeat(67) + "|");
+	    System.out.println("|    Assign Course to Professor       ");
+	    System.out.println("|" + " ".repeat(67) + "|");
+	    System.out.println("+" + "-".repeat(67) + "+");
 	    System.out.println("\n");
-	    System.out.println("---- Professor ----");
-	    System.out.println(String.format("%20s | %20s | %20s ", "ProfessorId", "Name", "Designation"));
-	    for (Professor professor : professorList) {
-	        System.out.println(String.format("%20s | %20s | %20s ", professor.getUserId(), professor.getName(),
-	                professor.getDesignation()));
-	    }
 
-	    System.out.println("\n\n");
-	    List<Course> courseList = adminOperation.viewCourses();
-	    System.out.println("---- Course ----");
-	    System.out.println(String.format("%20s | %20s | %20s", "CourseCode", "CourseName", "ProfessorId"));
-	    for (Course course : courseList) {
-	        System.out.println(String.format("%20s | %20s | %20s", course.getCourseCode(), course.getCourseName(),
-	                course.getInstructorId()));
+	    System.out.println("+" + "-".repeat(67) + "+");
+	    System.out.println("|           ---- Professor ----       |");
+	    System.out.println("|" + String.format("%20s | %20s | %20s ", "ProfessorId", "Name", "Designation") + "|");
+	    for (Professor professor : professorList) {
+	        System.out.println("|" + String.format("%20s | %20s | %20s ", professor.getUserId(), professor.getName(),
+	                professor.getDesignation()) + "|");
 	    }
+	    System.out.println("+" + "-".repeat(67) + "+");
+	    System.out.println("\n");
+
+	    List<Course> courseList = adminOperation.viewCourses();
+	    System.out.println("+" + "-".repeat(67) + "+");
+	    System.out.println("|             ---- Course ----        |");
+	    System.out.println("|" + String.format("%20s | %20s | %20s", "CourseCode", "CourseName", "ProfessorId") + "|");
+	    for (Course course : courseList) {
+	        System.out.println("|" + String.format("%20s | %20s | %20s", course.getCourseCode(), course.getCourseName(),
+	                course.getInstructorId()) + "|");
+	    }
+	    System.out.println("+" + "-".repeat(67) + "+");
+	    System.out.println("\n");
 
 	    Scanner in = new Scanner(System.in);
 	    System.out.println("Enter Course Code:");
@@ -191,6 +202,7 @@ public class AdminCRSMenu {
 	        System.out.println(e.getMessage());
 	    }
 	}
+
 
 
 	/**
@@ -268,9 +280,9 @@ public class AdminCRSMenu {
 	        return pendingStudentsList;
 	    }
 
-	    System.out.println(String.format("| %20s | %20s | %20s |", "StudentId", "Name", "Gender"));
+	    System.out.println(String.format("| %16s | %16s | %16s |", "StudentId", "Name", "Gender"));
 	    for (Student student : pendingStudentsList) {
-	        System.out.println(String.format("| %20s | %20s | %20s |", student.getStudentId(), student.getName(),
+	        System.out.println(String.format("| %16s | %16s | %16s |", student.getStudentId(), student.getName(),
 	                student.getGender().toString()));
 	    }
 
@@ -426,9 +438,9 @@ public class AdminCRSMenu {
 	    System.out.println("+-------------------------------------------------------+");
 	    System.out.println("|               Courses in Catalogue                     |");
 	    System.out.println("+-------------------------------------------------------+");
-	    System.out.println(String.format("| %20s | %20s | %20s |", "COURSE CODE", "COURSE NAME", "INSTRUCTOR"));
+	    System.out.println(String.format("| %16s | %16s | %16s |", "COURSE CODE", "COURSE NAME", "INSTRUCTOR"));
 	    for (Course course : courseList) {
-	        System.out.println(String.format("| %20s | %20s | %20s |", course.getCourseCode(), course.getCourseName(), course.getInstructorId()));
+	        System.out.println(String.format("| %16s | %16s | %16s |", course.getCourseCode(), course.getCourseName(), course.getInstructorId()));
 	    }
 	    System.out.println("+-------------------------------------------------------+");
 
