@@ -12,6 +12,17 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+/**
+ * @author Group-A
+ * Aaryan Pawar
+ * Harsh Garg
+ * Pulkit Bhargava
+ * Rudra Tiwari
+ * Shruti Sharma
+ * Vedant Patel
+ *
+ */
+
 public class DBUtils {
 	
 	private static Connection connection = null;

@@ -31,7 +31,13 @@ import com.flipkart.exception.UserNotAddedException;
 import com.flipkart.exception.UserNotFoundException;
 import com.flipkart.utils.DBUtils;
 /**
- * @author vedant.patel
+ * @author Group-A
+ * Aaryan Pawar
+ * Harsh Garg
+ * Pulkit Bhargava
+ * Rudra Tiwari
+ * Shruti Sharma
+ * Vedant Patel
  *
  */
 

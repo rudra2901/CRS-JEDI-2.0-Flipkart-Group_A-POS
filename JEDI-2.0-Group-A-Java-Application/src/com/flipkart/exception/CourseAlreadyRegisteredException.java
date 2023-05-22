@@ -4,9 +4,16 @@
 package com.flipkart.exception;
 
 /**
- * @author rudra.tiwari
+ * @author Group-A
+ * Aaryan Pawar
+ * Harsh Garg
+ * Pulkit Bhargava
+ * Rudra Tiwari
+ * Shruti Sharma
+ * Vedant Patel
  *
  */
+
 public class CourseAlreadyRegisteredException extends Exception{
 	
 	private String courseCode;

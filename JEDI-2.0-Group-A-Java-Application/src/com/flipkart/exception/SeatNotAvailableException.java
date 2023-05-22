@@ -1,10 +1,16 @@
 package com.flipkart.exception;
 
 /**
- * Exception to check if seats are available for course registration
- * @author vedant.patel
+ * @author Group-A
+ * Aaryan Pawar
+ * Harsh Garg
+ * Pulkit Bhargava
+ * Rudra Tiwari
+ * Shruti Sharma
+ * Vedant Patel
  *
  */
+
 public class SeatNotAvailableException extends Exception{
 	
 	private String courseCode;

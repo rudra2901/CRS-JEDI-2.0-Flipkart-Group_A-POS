@@ -14,6 +14,16 @@ import com.flipkart.exception.CourseNotFoundException;
 import com.flipkart.exception.SeatNotAvailableException;
 import com.flipkart.validator.StudentValidator;
 
+/**
+ * @author Group-A
+ * Aaryan Pawar
+ * Harsh Garg
+ * Pulkit Bhargava
+ * Rudra Tiwari
+ * Shruti Sharma
+ * Vedant Patel
+ *
+ */
 
 public class RegistrationOperation implements RegistrationInterface {
 
