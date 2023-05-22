@@ -9,17 +9,19 @@ public class Course
 	private String crsName;
 	private String instructorId;
 	private int seats = 10;
+	private int courseFee = 0;
 	
 	public Course()
 	{
 		
 	}
 	
-	public Course(String crsCode,String crsName,String professorId,int seats) {
+	public Course(String crsCode,String crsName,String professorId,int seats, int courseFee) {
 		this.crsCode=crsCode;
 		this.crsName=crsName;
 		this.instructorId=professorId;
 		this.seats=seats;
+		this.courseFee = courseFee;
 	}
 	/**
 	 * Method to get Course Code
@@ -83,6 +85,14 @@ public class Course
 	 */
 	public void setInstructorId(String instructorId) {
 		this.instructorId = instructorId;
+	}
+
+	public int getCourseFee() {
+		return courseFee;
+	}
+
+	public void setCourseFee(int courseFee) {
+		this.courseFee = courseFee;
 	}
 	
 }

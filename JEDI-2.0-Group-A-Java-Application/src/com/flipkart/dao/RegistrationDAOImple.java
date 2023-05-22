@@ -343,7 +343,7 @@ public class RegistrationDAOImple implements RegistrationDAOInterface{
 
 			while (rs.next()) {
 				availableCourseList.add(new Course(rs.getString("courseCode"), rs.getString("courseName"),
-						rs.getString("professorId"), rs.getInt("seats")));
+						rs.getString("professorId"), rs.getInt("seats"), rs.getInt("courseFee")));
 
 			}
 			
@@ -387,7 +387,7 @@ public class RegistrationDAOImple implements RegistrationDAOInterface{
 			
 			while (rs.next()) {
 				registeredCourseList.add(new Course(rs.getString("courseCode"), rs.getString("courseName"),
-						rs.getString("professorId"), rs.getInt("seats")));
+						rs.getString("professorId"), rs.getInt("seats"), rs.getInt("courseFee")));
 
 			}
 		} 

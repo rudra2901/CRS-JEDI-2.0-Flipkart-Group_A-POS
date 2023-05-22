@@ -59,7 +59,7 @@ public class ProfessorDAOImple implements ProfessorDAOInterface {
 			ResultSet results=statement.executeQuery();
 			while(results.next())
 			{
-				courseList.add(new Course(results.getString("courseCode"),results.getString("courseName"),results.getString("professorId"),results.getInt("seats")));
+				courseList.add(new Course(results.getString("courseCode"),results.getString("courseName"),results.getString("professorId"),results.getInt("seats"), results.getInt("courseFee")));
 			}
 		}
 		catch(SQLException e)

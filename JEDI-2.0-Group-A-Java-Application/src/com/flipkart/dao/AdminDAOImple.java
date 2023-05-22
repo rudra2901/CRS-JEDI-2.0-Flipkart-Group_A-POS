@@ -114,8 +114,10 @@ public class AdminDAOImple implements AdminDAOInterface{
 			statement.setString(1, course.getCourseCode());
 			statement.setString(2, course.getCourseName());
 			
-			statement.setInt(3, 10);
-			statement.setString(4, "NOT_GRADED");
+			statement.setInt(3, course.getSeats());
+			statement.setString(4, course.getInstructorId());
+			statement.setInt(5, course.getCourseFee());
+			
 			int row = statement.executeUpdate();
 			
 			System.out.println(row + " course added");

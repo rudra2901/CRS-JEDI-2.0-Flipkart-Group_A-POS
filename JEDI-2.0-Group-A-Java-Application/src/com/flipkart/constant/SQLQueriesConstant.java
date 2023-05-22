@@ -8,7 +8,7 @@ public class SQLQueriesConstant {
 	
 		//AdminDao Queries
 		public static final String DELETE_COURSE_QUERY = "delete from Course where courseCode = ?";
-		public static final String ADD_COURSE_QUERY = "insert into Course(courseCode, courseName, seats, professorId) values (?, ?, ?, ?)";
+		public static final String ADD_COURSE_QUERY = "insert into Course(courseCode, courseName, seats, professorId, courseFee) values (?, ?, ?, ?, ?)";
 		public static final String VIEW_PENDING_ADMISSION_QUERY = "select userId,name, password, role, gender, address, studentId from student, user where isApproved = 0 and studentId = userId";
 		public static final String APPROVE_STUDENT_QUERY = "update Student set isApproved = 1 where studentId = ?";
 		public static final String ADD_USER_QUERY = "insert into User(userId, name, password, role, gender, address) values (?, ?, ?, ?, ?, ?)";
@@ -53,7 +53,7 @@ public class SQLQueriesConstant {
 		public static final String GET_ROLE="select role from user where userId = ?;";
 		public static final String GET_COURSES="select * from course where professorId=?";
 		public static final String GET_ENROLLED_STUDENTS="select course.courseCode,course.courseName,registeredcourse.studentId from course inner join registeredcourse on course.courseCode = registeredcourse.courseCode where course.professorId = ? order by course.courseCode";
-		public static final String ADD_GRADE="update registeredcourse set GradeConstant=? where courseCode=? and studentId=?";
+		public static final String ADD_GRADE="update registeredcourse set grade=? where courseCode=? and studentId=?";
 		public static final String GET_PROF_NAME = "select name from user where userId = ?";
 		
 		

@@ -339,10 +339,17 @@ public class AdminCRSMenu {
 		System.out.println("Enter Course Name:");
 		String courseName = in.next();
 		
-		Course course = new Course(courseCode, courseName,"", 10);
+		System.out.println("Enter Course Fee:");
+		int courseFee = in.nextInt();
+		
+		System.out.println("Enter Number of Seats:");
+		int seats = in.nextInt();
+		
+		Course course = new Course();
 		course.setCourseCode(courseCode);
 		course.setCourseName(courseName);
-		course.setSeats(10);
+		course.setSeats(seats);
+		course.setCourseFee(courseFee);
 		
 		try {
 		adminOperation.addCourse(course, courseList);		
