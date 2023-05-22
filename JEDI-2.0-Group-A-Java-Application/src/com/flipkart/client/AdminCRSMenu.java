@@ -256,23 +256,48 @@ public class AdminCRSMenu {
 		
 		List<Student> studentList = viewPendingAdmissions();
 		if(studentList.size() == 0) {
-			
-			
+			System.out.println("No Pending Approval!");
 			return;
 		}
-		
-		System.out.println("Enter Student's ID:");
-		String studentUserIdApproval = in.next();
-		
-		
-		try {
-			adminOperation.approveStudent(studentUserIdApproval, studentList);
-			System.out.println("\nStudent Id : " +studentUserIdApproval+ " has been approved\n");
-			//send notification from system
-			notificationInterface.sendNotification(NotificationTypeConstant.REGISTRATION, studentUserIdApproval, null,0);
-	
-		} catch (StudentNotFoundForApprovalException e) {
-			System.out.println(e.getMessage());
+		int choice = 0;
+
+		System.out.println("Select Type of approval. \n 1. Approve all students\n 2. Approve by ID");
+		choice = in.nextInt();
+
+		String studentUserIdApproval;
+
+		if(choice == 1) {
+			for(Student it : studentList) {
+//				studentUserIdApproval = it.getStudentId();
+//				System.out.println(studentUserIdApproval);
+//				System.out.println(studentUserIdApproval.getClass());
+				try {
+					adminOperation.approveStudent(it.getUserId(), studentList);
+					System.out.println("\nStudent Id : " +it.getUserId()+ " has been approved\n");
+					//send notification from system
+					notificationInterface.sendNotification(NotificationTypeConstant.REGISTRATION, it.getUserId(), null,0);
+
+				} catch (StudentNotFoundForApprovalException e) {
+					System.out.println(e.getMessage());
+				}
+			}
+		}
+		else if(choice == 2) {
+			System.out.println("Enter Student's ID:");
+			studentUserIdApproval = in.next();
+
+			try {
+				adminOperation.approveStudent(studentUserIdApproval, studentList);
+				System.out.println("\nStudent Id : " +studentUserIdApproval+ " has been approved\n");
+				//send notification from system
+				notificationInterface.sendNotification(NotificationTypeConstant.REGISTRATION, studentUserIdApproval, null,0);
+
+			} catch (StudentNotFoundForApprovalException e) {
+				System.out.println(e.getMessage());
+			}
+		}
+		else {
+			System.out.println("\t Incorrect choice!");
 		}
 	
 		
