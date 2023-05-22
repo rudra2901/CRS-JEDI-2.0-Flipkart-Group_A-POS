@@ -2,7 +2,7 @@ package com.flipkart.exception;
 
 /**
  * Exception to check if user cannot be added
- * @author aaryan.pawar
+ * @author Tribhav Chaudhary
  *
  */
 public class UserNotAddedException extends Exception{

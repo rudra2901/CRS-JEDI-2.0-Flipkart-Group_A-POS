@@ -1,7 +1,7 @@
 package com.flipkart.exception;
 
 /**
- * @author aaryan.pawar
+ * @author Tribhav Chaudhary
  *
  */
 public class UserIdAlreadyInUseException extends Exception{

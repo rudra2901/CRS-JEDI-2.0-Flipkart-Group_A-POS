@@ -4,7 +4,7 @@
 package com.flipkart.exception;
 
 /**
- * @author aaryan.pawar
+ * @author Tanishq
  *
  */
 public class CourseNotAssignedException extends Exception{
