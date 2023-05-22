@@ -74,12 +74,34 @@ public class AdminCRSMenu {
                     approveStudent();
                     break;
 
-<<<<<<< HEAD
                 case 5:
                     viewPendingAdmissions();
                     break;
-=======
-	/**
+
+	
+                case 6:
+                    addProfessor();
+                    break;
+
+                case 7:
+                    assignCourseToProfessor();
+                    break;
+
+                case 8:
+                    generateReportCard();
+                    break;
+
+                case 9:
+                    CRSApplication.loggedin = false;
+                    return;
+
+                default:
+                    System.out.println("---- Invalid Choice ----");
+            }
+        }
+    }
+    
+    /**
 	 * Method to approve a Student using Student's ID
 	 */
 	private void approveStudent() {
@@ -131,29 +153,6 @@ public class AdminCRSMenu {
 		}
 		
 	}
->>>>>>> ec2df28 (feat:added appprove all students)
-
-                case 6:
-                    addProfessor();
-                    break;
-
-                case 7:
-                    assignCourseToProfessor();
-                    break;
-
-                case 8:
-                    generateReportCard();
-                    break;
-
-                case 9:
-                    CRSApplication.loggedin = false;
-                    return;
-
-                default:
-                    System.out.println("---- Invalid Choice ----");
-            }
-        }
-    }
 
     private void generateReportCard() {
 
@@ -284,30 +283,6 @@ public class AdminCRSMenu {
             System.out.println(String.format("%-20s | %-20s | %-20s", student.getStudentId(), student.getName(), student.getGender().toString()));
         }
         return pendingStudentsList;
-    }
-
-    /**
-     * Method to approve a Student using Student's ID
-     */
-    private void approveStudent() {
-
-        List<Student> studentList = viewPendingAdmissions();
-        if (studentList.size() == 0) {
-            return;
-        }
-
-        System.out.println("Enter Student's ID:");
-        String studentUserIdApproval = in.next();
-
-        try {
-            adminOperation.approveStudent(studentUserIdApproval, studentList);
-            System.out.println("\nStudent ID: " + studentUserIdApproval + " has been approved\n");
-            // Send notification from system
-            notificationInterface.sendNotification(NotificationTypeConstant.REGISTRATION, studentUserIdApproval, null, 0);
-
-        } catch (StudentNotFoundForApprovalException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     /**
