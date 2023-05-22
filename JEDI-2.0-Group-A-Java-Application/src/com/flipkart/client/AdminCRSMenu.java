@@ -265,10 +265,7 @@ public class AdminCRSMenu {
 		String studentUserIdApproval;
 
 		if (choice == 1) {
-//			for(Student it : studentList) {
-////				studentUserIdApproval = it.getStudentId();
-////				System.out.println(studentUserIdApproval);
-////				System.out.println(studentUserIdApproval.getClass());
+			
 			studentList.forEach(it -> {
 				try {
 					adminOperation.approveStudent(it.getUserId(), studentList);
@@ -282,7 +279,6 @@ public class AdminCRSMenu {
 				}
 			});
 
-//			}
 		} else if (choice == 2) {
 			System.out.println("Enter Student's ID:");
 			studentUserIdApproval = in.next();

@@ -44,7 +44,7 @@ public class StudentCRSMenu {
 
 			System.out.println("---- Student Menu ----");
 			System.out.println("\n\n");
-			System.out.println("1. Course Registration");
+			System.out.println("1. Semester Registration");
 			System.out.println("2. Add Course");
 			System.out.println("3. Drop Course");
 			System.out.println("4. View Course");
@@ -141,6 +141,7 @@ public class StudentCRSMenu {
 			System.out.println(e.getMessage());
 		}
 		is_registered = true;
+		
 
 //    try 
 //    {
@@ -333,7 +334,7 @@ public class StudentCRSMenu {
 		try {
 			isreg = registrationInterface.getRegistrationStatus(studentId);
 			ispaid = registrationInterface.getPaymentStatus(studentId);
-//		fee=registrationInterface.calculateFee(studentId);
+			fee=registrationInterface.calculateFee(studentId);
 		} catch (SQLException e) {
 
 			System.out.println(e.getMessage());

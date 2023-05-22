@@ -66,6 +66,10 @@ public class RegistrationDAOImple implements RegistrationDAOInterface{
 			stmt.setString(3, "-");
 			stmt.executeUpdate();
 			
+			stmt = conn.prepareStatement(SQLQueriesConstant.UPDATE_REGISTRATION_STATUS);
+			stmt.setString(1, studentId);
+			stmt.executeUpdate();
+			
 			stmt = conn.prepareStatement(SQLQueriesConstant.DECREMENT_COURSE_SEATS);
 			stmt.setString(1, courseCode);
 			stmt.executeUpdate();
