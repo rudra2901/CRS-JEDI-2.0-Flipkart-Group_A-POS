@@ -1,23 +1,20 @@
-/**
- * 
- */
 package com.flipkart.bean;
 
 import java.util.Date;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Admin extends User {
+import com.flipkart.constant.GenderConstant;
+import com.flipkart.constant.RoleConstant;
 
-	private Date dateOfJoining;
+public class Admin extends User
+{
+		
+		private String adminID;
+	
+		public Admin(String userID, String name, GenderConstant gender, RoleConstant role, String password, String address) 
+		{
+			super(userID, name, role, password, gender, address);
+		}	
 
-	public Date getDateOfJoining() {
-		return dateOfJoining;
-	}
-
-	public void setDateOfJoining(Date dateOfJoining) {
-		this.dateOfJoining = dateOfJoining;
-	}
+		
+		
 }

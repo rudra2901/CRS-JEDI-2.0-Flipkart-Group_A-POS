@@ -3,45 +3,67 @@
  */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class RegisteredCourse {
+
+
+import com.flipkart.constant.GradeConstant;
+
+public class RegisteredCourse 
+{
+	Course course;
+	String studentId;
+	GradeConstant grade;
 	
-	private String courseCode;
-	private int semester;
-	private int studentID;
-	private String grade;
 	
 	
-	public String getCourseCode() {
-		return courseCode;
-	}
-	public void setCourseCode(String courseCode) {
-		this.courseCode = courseCode;
-	}
-	
-	public int getSemester() {
-		return semester;
-	}
-	public void setSemester(int semester) {
-		this.semester = semester;
+	/**
+	 * @return the course
+	 */
+	public Course getCourse() {
+		return course;
 	}
 	
-	public int getStudentID() {
-		return studentID;
-	}
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	
+	/**
+	 * @param course the course to set
+	 */
+	public void setCourse(Course course) {
+		this.course = new Course(course.getCourseCode(), course.getCourseName(), course.getInstructorId() ,course.getSeats());
 	}
 	
-	public String getGrade() {
+	
+	/**
+	 * @return the studentId
+	 */
+	public String getstudentId() {
+		return studentId;
+	}
+	
+	
+	/**
+	 * @param studentId the studentId to set
+	 */
+	public void setstudentId(String studentId) {
+		this.studentId = studentId;
+	}
+	
+	
+	/**
+	 * @return the grade
+	 */
+	public GradeConstant getGrade() {
 		return grade;
 	}
+	
+	
+	
+	/**
+	 * @param grade the grade to set
+	 */
 	public void setGrade(String grade) {
-		this.grade = grade;
+		this.grade = GradeConstant.valueOf(grade);
 	}
+	
+	
 	
 	
 

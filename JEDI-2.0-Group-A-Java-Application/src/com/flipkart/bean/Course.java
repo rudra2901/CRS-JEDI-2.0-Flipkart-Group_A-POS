@@ -3,46 +3,86 @@
  */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Course {
+public class Course 
+{
+	private String crsCode;
+	private String crsName;
+	private String instructorId;
+	private int seats = 10;
 	
-	private String courseCode;
-	private String name;
-	private boolean isOffered;
-	private String instructor;
+	public Course()
+	{
+		
+	}
 	
-	
+	public Course(String crsCode,String crsName,String professorId,int seats) {
+		this.crsCode=crsCode;
+		this.crsName=crsName;
+		this.instructorId=professorId;
+		this.seats=seats;
+	}
+	/**
+	 * Method to get Course Code
+	 * @return Course Code
+	 */
 	public String getCourseCode() {
-		return courseCode;
+		return crsCode;
 	}
+	
+	/**
+	 * Method to set Course Code
+	 * @param courseCode
+	 */
 	public void setCourseCode(String courseCode) {
-		this.courseCode = courseCode;
+		this.crsCode = courseCode;
 	}
 	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	public boolean isOffered() {
-		return isOffered;
-	}
-	public void setOffered(boolean isOffered) {
-		this.isOffered = isOffered;
+	/**
+	 * Method to get Course Name
+	 * @return Course Name
+	 */
+	public String getCourseName() {
+		return crsName;
 	}
 	
-	public String getInstructor() {
-		return instructor;
+	/**
+	 * Method to set Course Name
+	 * @param courseName
+	 */
+	public void setCourseName(String courseName) {
+		this.crsName = courseName;
 	}
-	public void setInstructor(String instructor) {
-		this.instructor = instructor;
-	}
-	
-	
 
+	/**
+	 * Method to get available seats
+	 * @return Seats available
+	 */
+	public int getSeats() {
+		return seats;
+	}
+	
+	/**
+	 * Method to set available seats
+	 * @param seats
+	 */
+	public void setSeats(int seats) {
+		this.seats = seats;
+	}
+	
+	/**
+	 * Method to get Instructor Id of professor teaching the course
+	 * @return Instructor Id
+	 */
+	public String getInstructorId() {
+		return instructorId;
+	}
+	
+	/**
+	 * Method to set Instructor Id of professor teaching the course
+	 * @param instructorId
+	 */
+	public void setInstructorId(String instructorId) {
+		this.instructorId = instructorId;
+	}
+	
 }

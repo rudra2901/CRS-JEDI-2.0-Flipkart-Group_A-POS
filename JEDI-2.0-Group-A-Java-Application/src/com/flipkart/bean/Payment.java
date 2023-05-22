@@ -1,58 +1,76 @@
-/**
- * 
- */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Payment {
-
-	private int studentID;
-	private String referenceID;
-	private float amount;
-	private boolean status;
-	private String paymentType;
-
-	public int getStudentID() {
-		return studentID;
+public class Payment 
+{
+	Student stud;
+	String InvoiceID;
+	float amount;
+	boolean status;
+	
+	
+	/**
+	 * @return the stud
+	 */
+	public Student getStud() {
+		return stud;
 	}
-
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	
+	
+	/**
+	 * @param stud the stud to set
+	 */
+	public void setStud(Student stud) {
+		this.stud = stud;
 	}
-
-	public String getReferenceID() {
-		return referenceID;
+	
+	
+	/**
+	 * @return the invoiceID
+	 */
+	public String getInvoiceID() {
+		return InvoiceID;
 	}
-
-	public void setReferenceID(String referenceID) {
-		this.referenceID = referenceID;
+	
+	
+	/**
+	 * @param invoiceID the invoiceID to set
+	 */
+	public void setInvoiceID(String invoiceID) {
+		InvoiceID = invoiceID;
 	}
-
+	
+	
+	/**
+	 * @return the amount
+	 */
 	public float getAmount() {
 		return amount;
 	}
-
+	
+	
+	/**
+	 * @param amount the amount to set
+	 */
 	public void setAmount(float amount) {
 		this.amount = amount;
 	}
-
+	
+	
+	/**
+	 * @return the status
+	 */
 	public boolean isStatus() {
 		return status;
 	}
-
+	
+	
+	/**
+	 * @param status the status to set
+	 */
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
-
-	public String getPaymentType() {
-		return paymentType;
-	}
-
-	public void setPaymentType(String paymentType) {
-		this.paymentType = paymentType;
-	}
-
+	
+	
+	
 }

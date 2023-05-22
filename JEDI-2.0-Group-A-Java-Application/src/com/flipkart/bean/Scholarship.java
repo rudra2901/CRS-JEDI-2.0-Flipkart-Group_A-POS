@@ -1,31 +1,19 @@
-/**
- * 
- */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Scholarship extends Payment {
-
-	private String scholarshipName;
-	private int scholarshipAmount;
-
-	public String getScholarshipName() {
-		return scholarshipName;
+public class Scholarship {
+	String name;
+	int amount;
+	public String getName() {
+		return name;
 	}
-
-	public void setScholarshipName(String scholarshipName) {
-		this.scholarshipName = scholarshipName;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public int getScholarshipAmount() {
-		return scholarshipAmount;
+	public int getAmount() {
+		return amount;
 	}
-
-	public void setScholarshipAmount(int scholarshipAmount) {
-		this.scholarshipAmount = scholarshipAmount;
+	public void setAmount(int amount) {
+		this.amount = amount;
 	}
-
+	
 }

@@ -3,55 +3,91 @@
  */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Notification {
+import com.flipkart.constant.NotificationTypeConstant;
 
-	private int studentID;
-	private int referenceID;
-	private int notificationID;
-	private String notificationMessage;
-	private String notificationType;
 
-	public int getStudentID() {
-		return studentID;
+//GLOBAL VAR
+
+public class Notification 
+{
+	private int notiID;
+	private int stdID;
+	private NotificationTypeConstant type;
+	private String referID;
+	
+	/**
+	 * @return the notiID
+	 */
+	public int getNotiID() 
+	{
+		return notiID;
 	}
-
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	
+	
+	/**
+	 * @param notiID the notiID to set
+	 */
+	public void setNotiID(int notiID) 
+	{
+		this.notiID = notiID;
 	}
-
-	public int getReferenceID() {
-		return referenceID;
+	
+	
+	
+	/**
+	 * @return the stdID
+	 */
+	public int getStdID() 
+	{
+		return stdID;
 	}
-
-	public void setReferenceID(int referenceID) {
-		this.referenceID = referenceID;
+	
+	
+	/**
+	 * @param stdID the stdID to set
+	 */
+	public void setStdID(int stdID)
+	{
+		this.stdID = stdID;
 	}
-
-	public int getNotificationID() {
-		return notificationID;
+	
+	
+	
+	/**
+	 * @return the type
+	 */
+	public NotificationTypeConstant getType() 
+	{
+		return type;
 	}
-
-	public void setNotificationID(int notificationID) {
-		this.notificationID = notificationID;
+	
+	
+	
+	/**
+	 * @param type the type to set
+	 */
+	public void setType(NotificationTypeConstant type) 
+	{
+		this.type = type;
 	}
-
-	public String getNotificationMessage() {
-		return notificationMessage;
+	
+	
+	/**
+	 * @return the referID
+	 */
+	public String getReferID() 
+	{
+		return referID;
 	}
-
-	public void setNotificationMessage(String notificationMessage) {
-		this.notificationMessage = notificationMessage;
+	
+	
+	/**
+	 * @param referID the referID to set
+	 */
+	public void setReferID(String referID) 
+	{
+		this.referID = referID;
 	}
-
-	public String getNotificationType() {
-		return notificationType;
-	}
-
-	public void setNotificationType(String notificationType) {
-		this.notificationType = notificationType;
-	}
+	
+	
 }

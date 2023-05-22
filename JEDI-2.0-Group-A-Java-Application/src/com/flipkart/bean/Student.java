@@ -3,38 +3,80 @@
  */
 package com.flipkart.bean;
 
-/**
- * @author rudra.tiwari
- *
- */
-public class Student extends User {
+import com.flipkart.constant.GenderConstant;
+import com.flipkart.constant.RoleConstant;
 
-	private int studentID;
-	private String branch;
-	private int batch;
-
-	public int getStudentID() {
-		return studentID;
+public class Student extends User 
+{
+	private String department;
+	private String studentId;
+	private int gradYear;
+	boolean isApproved;
+	
+	//Constructing User of a Student type.
+	public Student(String userId, String name, RoleConstant role, String password, GenderConstant gender, String address,String branchName,String studentId,int batch,boolean isApproved) {
+		super(userId, name, role, password,gender,address);
+		this.department = branchName;
+		this.studentId = studentId;
+		this.gradYear = batch;
+		this.isApproved = isApproved;
 	}
 
-	public void setStudentID(int studentID) {
-		this.studentID = studentID;
+	public Student() {
+		
 	}
-
-	public String getBranch() {
-		return branch;
+	/**
+	 * @return the department
+	 */
+	public String getDepartment() 
+	{
+		return department;
 	}
-
-	public void setBranch(String branch) {
-		this.branch = branch;
+	
+	
+	/**
+	 * @param department the department to set
+	 */
+	public void setDepartment(String department) 
+	{
+		this.department = department;
 	}
-
-	public int getBatch() {
-		return batch;
+	
+	
+	/**
+	 * @return the studentID
+	 */
+	public String getStudentId() 
+	{
+		return studentId;
 	}
-
-	public void setBatch(int batch) {
-		this.batch = batch;
+	
+	
+	/**
+	 * @param studentID the studentID to set
+	 */
+	public void setStudentId(String studentId) 
+	{
+		this.studentId = studentId;
 	}
-
+	
+	
+	/**
+	 * @return the gradYear
+	 */
+	public int getGradYear() 
+	{
+		return gradYear;
+	}
+	
+	
+	/**
+	 * @param gradYear the gradYear to set
+	 */
+	public void setGradYear(int gradYear) 
+	{
+		this.gradYear = gradYear;
+	}
+		
+	
 }
