@@ -200,8 +200,6 @@ private void addCourse(String studentId) {
 			System.out.println(e.getMessage());
 			
 		}
-		
-		
 	}
 	else 
 	{
@@ -387,7 +385,7 @@ private void make_payment(String studentId)
 	{
 		isreg = registrationInterface.getRegistrationStatus(studentId);
 		ispaid = registrationInterface.getPaymentStatus(studentId);
-		fee=registrationInterface.calculateFee(studentId);
+//		fee=registrationInterface.calculateFee(studentId);
 	} 
 	catch (SQLException e) 
 	{

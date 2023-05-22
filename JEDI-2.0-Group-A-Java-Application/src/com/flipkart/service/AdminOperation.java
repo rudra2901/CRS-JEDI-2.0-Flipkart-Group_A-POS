@@ -126,13 +126,8 @@ public class AdminOperation implements AdminInterface{
 			
 			if(AdminValidator.isValidUnapprovedStudent(studentId, studentList)) {
 				
-				
 				throw new StudentNotFoundForApprovalException(studentId);
 			}
-			
-			// Validation : bharosa to kar
-			//source: trust me bro
-			
 			adminDaoOperation.approveStudent(studentId);
 		}
 		catch(StudentNotFoundForApprovalException e) {

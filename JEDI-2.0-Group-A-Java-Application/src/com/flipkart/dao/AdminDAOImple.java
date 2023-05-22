@@ -31,11 +31,7 @@ import com.flipkart.exception.UserNotAddedException;
 import com.flipkart.exception.UserNotFoundException;
 import com.flipkart.utils.DBUtils;
 /**
-<<<<<<< HEAD
  * @author aaryan.pawar
-=======
- * @author rudra.tiwari
->>>>>>> ec2df28 (feat:added appprove all students)
  *
  */
 
@@ -194,7 +190,6 @@ public class AdminDAOImple implements AdminDAOInterface{
 			statement = connection.prepareStatement(sql);
 			
 			statement.setString(1,studentId);
-//			System.out.println(statement);
 			int row = statement.executeUpdate();
 			
 			System.out.println(row + " student approved.");
