@@ -83,7 +83,15 @@ public class UserOperation implements UserInterface {
 		return userDaoInterface.getRole(userId);
 	}
 
-	
+	/**
+	 * Method to get name of a specific User
+	 * @param userId
+	 * @return name of the User
+	 */
+	@Override
+	public String getName(String userId) {
+		return userDaoInterface.getName(userId);
+	}
 
 
 	

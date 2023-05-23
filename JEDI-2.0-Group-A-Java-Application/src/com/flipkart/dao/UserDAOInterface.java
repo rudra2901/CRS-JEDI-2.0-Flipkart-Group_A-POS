@@ -39,6 +39,13 @@ public interface UserDAOInterface {
 	 */
 	public String getRole(String userId);
 	
+	/**
+	 * Method to get nameConstant of User from DataBase
+	 * @param userId
+	 * @return name
+	 */
+	public String getName(String userId);
+	
 	
 	/**
 	 * Method to update password of user in DataBase

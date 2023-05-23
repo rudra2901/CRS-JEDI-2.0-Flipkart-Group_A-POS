@@ -116,7 +116,7 @@ public class CRSApplication {
 		{System.out.println("+-----------------+");
 		System.out.println("|      Login      |");
 		System.out.println("+-----------------+");
-		System.out.println("| Email:          |");
+		System.out.println("| User ID:        |");
 		System.out.print("| ");
 		userId = in.next();
 		System.out.println("+-----------------+");
@@ -140,17 +140,20 @@ public class CRSApplication {
 		    switch (role) {
 		        case "ADMIN":
 		            System.out.println("+----------------------------+");
-		            System.out.println("|   " + formattedDate + "   |");
-		            System.out.println("|   Login Successful   |");
+		            System.out.println("|   " + formattedDate + "      |");
+		            System.out.println("|   Admin Login Successful   |");
 		            System.out.println("+----------------------------+");
+		            System.out.println("       Welcome " + userInterface.getName(userId));
 		            AdminCRSMenu adminMenu = new AdminCRSMenu();
 		            adminMenu.createMenu();
 		            break;
 		        case "PROFESSOR":
-		            System.out.println("+----------------------------+");
-		            System.out.println("|   " + formattedDate + "   |");
-		            System.out.println("|   Login Successful   |");
-		            System.out.println("+----------------------------+");
+		            System.out.println("+-----------------------------+");
+		            System.out.println("|     " + formattedDate + "     |");
+		            System.out.println("| Professor Login Successful  |");
+		            System.out.println("+-----------------------------+");
+		            System.out.println("        Welcome " + userInterface.getName(userId));
+
 		            ProfessorCRSMenu professorMenu = new ProfessorCRSMenu();
 		            professorMenu.createMenu(userId);
 		            break;
@@ -158,10 +161,12 @@ public class CRSApplication {
 		            String studentId = userId;
 		            boolean isApproved = studentInterface.isApproved(studentId);
 		            if (isApproved) {
+		                System.out.println("+-----------------------------+");
+		                System.out.println("|     " + formattedDate + "     |");
+		                System.out.println("|  Student Login Successful   |");
 		                System.out.println("+----------------------------+");
-		                System.out.println("|   " + formattedDate + "   |");
-		                System.out.println("|   Login Successful   |");
-		                System.out.println("+----------------------------+");
+		                System.out.println("     Welcome " + userInterface.getName(userId));
+
 		                StudentCRSMenu studentMenu = new StudentCRSMenu();
 		                studentMenu.create_menu(studentId);
 		            } else {
@@ -212,7 +217,7 @@ public class CRSApplication {
 			System.out.print("| ");
 			name = sc.nextLine();
 			System.out.println("+---------------------------+");
-			System.out.println("| Email:                    |");
+			System.out.println("| User ID:                    |");
 			System.out.println("+---------------------------+");
 			System.out.print("| ");
 			userId = sc.next();
@@ -287,7 +292,7 @@ public class CRSApplication {
 		System.out.println("+--------------------------------+");
 
 		try {
-		    System.out.println("| Email:                         |");
+		    System.out.println("| User ID:                         |");
 		    userId = in.next();
 		    System.out.println("+--------------------------------+");
 		    System.out.println("| New Password:                  |");

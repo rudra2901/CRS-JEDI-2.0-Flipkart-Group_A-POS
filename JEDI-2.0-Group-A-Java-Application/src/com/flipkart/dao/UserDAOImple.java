@@ -103,15 +103,12 @@ public class UserDAOImple implements UserDAOInterface{
 			PreparedStatement preparedStatement=connection.prepareStatement(SQLQueriesConstant.VERIFY_CREDENTIALS);
 			preparedStatement.setString(1,userId);
 			ResultSet resultSet = preparedStatement.executeQuery();
-			
-			System.out.println("inside verify");
-			
+						
 			if(!resultSet.next())
 				throw new UserNotFoundException(userId);
 
 			else if(password.equals(resultSet.getString("password")))
 			{
-				System.out.println("inside equals");
 				return true;
 			}
 			else
@@ -136,16 +133,6 @@ public class UserDAOImple implements UserDAOInterface{
 		return false;
 	}
 
-	/**
-	 * Method to update password of user in DataBase
-	 * @param userID
-	 * @return Update Password operation Status
-	 */
-	@Override
-	public boolean updatePassword(String userID) {
-		// TODO Auto-generated method stub
-		return false;
-	}
 	
 	/**
 	 * Method to get RoleConstant of User from DataBase
@@ -157,20 +144,16 @@ public class UserDAOImple implements UserDAOInterface{
 	{
 		Connection connection=DBUtils.getConnection();
 		try {
-			System.out.println(userId);
 			connection=DBUtils.getConnection();
 			
 			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.GET_ROLE);
 			statement.setString(1, userId);
 			ResultSet rs = statement.executeQuery();
 			
-			
-			
-			System.out.println("query executed");
-			
+						
 			if(rs.next())
 			{
-				System.out.println(rs.getString("role"));
+//				System.out.println(rs.getString("role"));
 				return rs.getString("role");
 			}
 				
@@ -186,11 +169,57 @@ public class UserDAOImple implements UserDAOInterface{
 			try {
 				connection.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				//e.printStackTrace();
+				e.printStackTrace();
 			}
 		}
 		return null;
+	}
+	
+	/**
+	 * Method to get name of User from DataBase
+	 * @param userId
+	 * @return name
+	 */
+	@Override
+	public String getName(String userId) 
+	{
+		Connection connection=DBUtils.getConnection();
+		try {
+			connection=DBUtils.getConnection();
+			
+			PreparedStatement statement = connection.prepareStatement(SQLQueriesConstant.GET_NAME);
+			statement.setString(1, userId);
+			ResultSet rs = statement.executeQuery();
+			
+						
+			if(rs.next())
+			{
+//				System.out.println(rs.getString("role"));
+				return rs.getString("name");
+			}
+				
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			
+		}
+		
+		finally
+		{
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return null;
+	}
+
+	@Override
+	public boolean updatePassword(String userID) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	

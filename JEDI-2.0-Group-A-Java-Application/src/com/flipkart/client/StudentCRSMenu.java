@@ -414,6 +414,59 @@ public class StudentCRSMenu {
 	                System.out.println("+--------------+");
 	            } else {
 	                try {
+	                	if(selectedMode == PaymentModeConstant.CARD_PAYMENT) {
+	                		System.out.println("+---------------------------+");
+	            			System.out.println("|       CARD PAYMENT        |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Card Number:              |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			String num = sc.nextLine();
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Expiry Date:              |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			num = sc.next();
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| CVV:                      |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			num = sc.next();	            	
+	                	}
+	                	else if(selectedMode == PaymentModeConstant.NET_BANKING) {
+	                		System.out.println("+---------------------------+");
+	            			System.out.println("|        NET BANKING        |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Bank Name:                |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			String num = sc.nextLine();
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Account Number:           |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			num = sc.next();
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| IFSC CODE:                |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			num = sc.next();
+	                	}
+	                	else if (selectedMode == PaymentModeConstant.OFFLINE) {
+	                		System.out.println("+---------------------------+");
+	            			System.out.println("|      OFFLINE PAYMENT      |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Bank Name:                |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			String num = sc.nextLine();
+	            			System.out.println("+---------------------------+");
+	            			System.out.println("| Challan/Cheque Number:    |");
+	            			System.out.println("+---------------------------+");
+	            			System.out.print("| ");
+	            			num = sc.next();	            			
+	                	}
+	                	
 	                    notificationInterface.sendNotification(NotificationTypeConstant.PAYED, studentId, selectedMode, fee);
 	                    System.out.println("+-------------------------------------------+");
 	                    System.out.println("| Payment Successful by StudentId: " + studentId + " |");
