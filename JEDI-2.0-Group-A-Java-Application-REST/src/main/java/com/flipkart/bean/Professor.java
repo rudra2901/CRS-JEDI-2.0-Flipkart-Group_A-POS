@@ -3,6 +3,11 @@
  */
 package com.flipkart.bean;
 
+import java.util.Date;
+
+import com.flipkart.constant.GenderConstant;
+import com.flipkart.constant.RoleConstant;
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -13,11 +18,6 @@ package com.flipkart.bean;
  * Vedant Patel
  *
  */
-
-import java.util.Date;
-
-import com.flipkart.constant.GenderConstant;
-import com.flipkart.constant.RoleConstant;
 
 public class Professor extends User {
 	private String professorID;

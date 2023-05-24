@@ -13,7 +13,6 @@ package com.flipkart.exception;
  * Vedant Patel
  *
  */
-
 public class CourseNotFoundException extends Exception{
 	
 	private String courseCode;

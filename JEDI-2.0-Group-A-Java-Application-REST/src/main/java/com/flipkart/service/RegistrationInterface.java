@@ -8,7 +8,7 @@ import com.flipkart.bean.Grade;
 import com.flipkart.bean.Notification;
 import com.flipkart.bean.Grade;
 import com.flipkart.constant.PaymentModeConstant;
-
+import com.flipkart.exception.CourseAlreadyRegisteredException;
 import com.flipkart.exception.CourseLimitExceededException;
 import com.flipkart.exception.CourseNotFoundException;
 import com.flipkart.exception.SeatNotAvailableException;
@@ -22,8 +22,10 @@ import com.flipkart.exception.SeatNotAvailableException;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Interface for Registration Operation
+ * 
  */
-
 public interface RegistrationInterface {
 	
 		public boolean addCourse(String courseCode, String studentId, List<Course> availableCourseList)
@@ -63,7 +65,8 @@ public interface RegistrationInterface {
 	List<Course> viewCourses(String studentId) throws SQLException;
 
 	/**
-	 * Method to view grade card for students
+	 * Me@Override
+	thod to view grade card for students
 	 * @param studentId
 	 * @return List of Student's Grades
 	 * @throws SQLException 
@@ -93,5 +96,26 @@ public interface RegistrationInterface {
 	public boolean isReportGenerated(String studentId) throws SQLException;
 
 	public void setPaymentStatus(String studentId) throws SQLException;
+
+	/**
+	 * Method to add Course selected by student 
+	 * @param courseCode
+	 * @param studentId
+	 * @param courseList 
+	 * @return boolean indicating if the course is added successfully
+	 * @throws CourseNotFoundException
+	 * @throws SeatNotAvailableException 
+	 * @throws CourseLimitExceedException 
+	 * @throws SQLException 
+	 */
+	boolean checkCourse(String courseCode, String studentId, List<Course> availableCourseList)
+			throws CourseLimitExceededException, CourseAlreadyRegisteredException, SeatNotAvailableException,
+			CourseNotFoundException;
+
+	public boolean addCourse(String courseCode, String studentId);
+
+	public Notification payFee(String studentId, PaymentModeConstant mode, double fee) throws SQLException;
+
+	//public boolean checkCourse(String courseCode, String studentId, List<Course> availableCourseList) throws CourseLimitExceededException, CourseAlreadyRegisteredException, SeatNotAvailableException, CourseNotFoundException;
 	
 }

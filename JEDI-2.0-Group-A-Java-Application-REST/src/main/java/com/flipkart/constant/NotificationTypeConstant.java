@@ -13,7 +13,6 @@ package com.flipkart.constant;
  * Vedant Patel
  *
  */
-
 public enum NotificationTypeConstant
 {
 	REGISTRATION, APPROVED, PAYED

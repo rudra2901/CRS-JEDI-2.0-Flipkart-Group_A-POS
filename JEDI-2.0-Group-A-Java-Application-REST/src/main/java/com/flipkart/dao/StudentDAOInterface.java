@@ -3,6 +3,8 @@
  */
 package com.flipkart.dao;
 
+import java.sql.SQLException;
+
 import com.flipkart.bean.Student;
 import com.flipkart.exception.StudentNotRegisteredException;
 
@@ -15,9 +17,11 @@ import com.flipkart.exception.StudentNotRegisteredException;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Interface for Student Operations
+ *
  */
-
-public interface StudentDAOInterface {
+public interface StudentDaoInterface {
 	
 	
 	/**

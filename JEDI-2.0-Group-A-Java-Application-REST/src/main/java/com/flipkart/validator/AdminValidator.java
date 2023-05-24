@@ -17,7 +17,6 @@ import com.flipkart.bean.*;
  * Vedant Patel
  *
  */
-
 public class AdminValidator {
 	
 

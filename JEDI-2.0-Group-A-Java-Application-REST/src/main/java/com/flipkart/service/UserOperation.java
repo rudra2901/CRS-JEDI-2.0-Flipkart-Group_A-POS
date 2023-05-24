@@ -1,7 +1,7 @@
 package com.flipkart.service;
 
-import com.flipkart.dao.UserDAOInterface;
-import com.flipkart.dao.UserDAOImple;
+import com.flipkart.dao.UserDaoInterface;
+import com.flipkart.dao.UserDaoOperation;
 import com.flipkart.exception.UserNotFoundException;
 
 /**
@@ -13,12 +13,14 @@ import com.flipkart.exception.UserNotFoundException;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Implementations of User Operations
+ *
  */
-
 public class UserOperation implements UserInterface {
 	
 	private static volatile UserOperation instance=null;
-	UserDAOInterface userDaoInterface= UserDAOImple.getInstance();
+	UserDaoInterface userDaoInterface= UserDaoOperation.getInstance();
 	private UserOperation()
 	{
 		
@@ -49,6 +51,7 @@ public class UserOperation implements UserInterface {
 	
 	@Override
 	public boolean updatePassword(String userID,String newPassword) {
+		System.out.println("1 upd");
 		return userDaoInterface.updatePassword(userID, newPassword);
 	}
 
@@ -83,15 +86,7 @@ public class UserOperation implements UserInterface {
 		return userDaoInterface.getRole(userId);
 	}
 
-	/**
-	 * Method to get name of a specific User
-	 * @param userId
-	 * @return name of the User
-	 */
-	@Override
-	public String getName(String userId) {
-		return userDaoInterface.getName(userId);
-	}
+	
 
 
 	

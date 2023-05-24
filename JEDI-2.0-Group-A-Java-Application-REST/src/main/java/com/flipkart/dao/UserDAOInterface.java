@@ -12,8 +12,7 @@ import com.flipkart.exception.UserNotFoundException;
  * Vedant Patel
  *
  */
-
-public interface UserDAOInterface {
+public interface UserDaoInterface {
 	
 	/**
 	 * Method to verify credentials of Users from DataBase
@@ -38,13 +37,6 @@ public interface UserDAOInterface {
 	 * @return RoleConstant
 	 */
 	public String getRole(String userId);
-	
-	/**
-	 * Method to get nameConstant of User from DataBase
-	 * @param userId
-	 * @return name
-	 */
-	public String getName(String userId);
 	
 	
 	/**

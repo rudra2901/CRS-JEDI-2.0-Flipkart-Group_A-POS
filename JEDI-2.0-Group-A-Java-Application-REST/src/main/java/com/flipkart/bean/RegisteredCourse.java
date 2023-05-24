@@ -3,6 +3,7 @@
  */
 package com.flipkart.bean;
 
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -13,7 +14,6 @@ package com.flipkart.bean;
  * Vedant Patel
  *
  */
-
 import com.flipkart.constant.GradeConstant;
 
 public class RegisteredCourse 
@@ -36,7 +36,7 @@ public class RegisteredCourse
 	 * @param course the course to set
 	 */
 	public void setCourse(Course course) {
-		this.course = new Course(course.getCourseCode(), course.getCourseName(), course.getInstructorId() ,course.getSeats(), course.getCourseFee());
+		this.course = new Course(course.getCourseCode(), course.getCourseName(), course.getInstructorId() ,course.getSeats());
 	}
 	
 	

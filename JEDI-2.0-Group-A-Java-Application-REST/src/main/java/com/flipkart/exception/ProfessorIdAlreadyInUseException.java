@@ -10,7 +10,6 @@ package com.flipkart.exception;
  * Vedant Patel
  *
  */
-
 public class ProfessorIdAlreadyInUseException extends Exception{
 	private String ProfessorId;
 	

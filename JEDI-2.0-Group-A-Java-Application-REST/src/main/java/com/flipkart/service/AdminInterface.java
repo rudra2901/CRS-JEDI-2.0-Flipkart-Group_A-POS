@@ -19,7 +19,6 @@ import com.flipkart.bean.*;
  * Vedant Patel
  *
  */
-
 public interface AdminInterface 
 {
 	
@@ -93,5 +92,7 @@ public interface AdminInterface
 	 * @throws UserNotFoundException 
 	 */
 	public void assignCourse(String courseCode, String professorId) throws CourseNotFoundException, UserNotFoundException;
+
+	public void deleteCourse(String courseCode, List<Course> courseList) throws CourseNotFoundException;
 	
 }

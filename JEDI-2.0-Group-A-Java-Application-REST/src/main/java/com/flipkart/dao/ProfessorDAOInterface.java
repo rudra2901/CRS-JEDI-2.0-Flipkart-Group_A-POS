@@ -15,8 +15,7 @@ import com.flipkart.bean.Student;
  * Vedant Patel
  *
  */
-
-public interface ProfessorDAOInterface {
+public interface ProfessorDaoInterface {
 	
 	/**
 	 * Method to get Courses by Professor Id using SQL Commands

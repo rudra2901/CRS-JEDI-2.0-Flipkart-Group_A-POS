@@ -7,8 +7,8 @@ import java.util.UUID;
 
 import com.flipkart.constant.NotificationTypeConstant;
 import com.flipkart.constant.PaymentModeConstant;
-import com.flipkart.dao.NotificationDAOInterface;
-import com.flipkart.dao.NotificationDAOImple;
+import com.flipkart.dao.NotificationDaoInterface;
+import com.flipkart.dao.NotificationDaoOperation;
 
 /**
  * @author Group-A
@@ -20,11 +20,10 @@ import com.flipkart.dao.NotificationDAOImple;
  * Vedant Patel
  *
  */
-
 public class NotificationOperation implements NotificationInterface{
 	
 	private static volatile NotificationOperation instance=null;
-	NotificationDAOInterface notificationDaoInterface=NotificationDAOImple.getInstance();
+	NotificationDaoInterface notificationDaoInterface=NotificationDaoOperation.getInstance();
 	private NotificationOperation() {}
 	
 	/**

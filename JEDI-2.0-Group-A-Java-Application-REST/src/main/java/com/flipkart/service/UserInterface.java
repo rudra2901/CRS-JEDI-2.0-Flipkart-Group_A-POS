@@ -15,7 +15,6 @@ import com.flipkart.exception.UserNotFoundException;
  * Vedant Patel
  *
  */
-
 public interface UserInterface {
 
 	
@@ -26,13 +25,6 @@ public interface UserInterface {
 	 * @return RoleConstant of the User
 	 */
 	String getRole(String userId);
-	
-	/**
-	 * Method to get name of a specific User
-	 * @param userId
-	 * @return name of the User
-	 */
-	String getName(String userId);
 
 	/**
 	 * Method to verify User credentials

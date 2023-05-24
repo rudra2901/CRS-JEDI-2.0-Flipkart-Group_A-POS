@@ -1,5 +1,7 @@
 package com.flipkart.bean;
 
+import java.util.List;
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -10,8 +12,6 @@ package com.flipkart.bean;
  * Vedant Patel
  *
  */
-
-import java.util.List;
 
 public class Catalog 
 {

@@ -29,8 +29,7 @@ import com.flipkart.exception.UserNotFoundException;
  * Vedant Patel
  *
  */
-
-public interface AdminDAOInterface {
+public interface AdminDaoInterface {
 	
 	public List<Course> viewCourses();
 	public List<Professor> viewProfessors();
@@ -99,4 +98,5 @@ public interface AdminDAOInterface {
 	public void assignCourse(String courseCode, String professorId) throws CourseNotFoundException, UserNotFoundException;
 	
 	public void addUser(User user) throws UserNotAddedException, UserIdAlreadyInUseException;
+	public void deleteCourse(String courseCode) throws CourseNotFoundException;
 }

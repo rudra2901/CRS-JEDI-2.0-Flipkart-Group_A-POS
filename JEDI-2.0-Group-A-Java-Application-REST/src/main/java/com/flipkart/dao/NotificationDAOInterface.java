@@ -18,8 +18,7 @@ import com.flipkart.constant.PaymentModeConstant;
  * Vedant Patel
  *
  */
-
-public interface NotificationDAOInterface {
+public interface NotificationDaoInterface {
 
 	/**
 	 * Send Notification using SQL commands

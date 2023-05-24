@@ -3,6 +3,8 @@
  */
 package com.flipkart.bean;
 
+import com.flipkart.constant.NotificationTypeConstant;
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -13,9 +15,6 @@ package com.flipkart.bean;
  * Vedant Patel
  *
  */
-
-import com.flipkart.constant.NotificationTypeConstant;
-
 
 //GLOBAL VAR
 

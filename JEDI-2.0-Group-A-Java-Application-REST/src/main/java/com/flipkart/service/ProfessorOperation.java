@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
-import com.flipkart.dao.ProfessorDAOInterface;
-import com.flipkart.dao.ProfessorDAOImple;
+import com.flipkart.dao.ProfessorDaoInterface;
+import com.flipkart.dao.ProfessorDaoOperation;
 import com.flipkart.exception.GradeNotAllotedException;
 
 /**
@@ -19,11 +19,10 @@ import com.flipkart.exception.GradeNotAllotedException;
  * Vedant Patel
  *
  */
-
 public class ProfessorOperation implements ProfessorInterface {
 	
 	private static volatile ProfessorOperation instance=null;
-	ProfessorDAOInterface professorDAOInterface=ProfessorDAOImple.getInstance();
+	ProfessorDaoInterface professorDAOInterface=ProfessorDaoOperation.getInstance();
 	private ProfessorOperation()
 	{
 

@@ -9,8 +9,8 @@ import com.flipkart.validator.AdminValidator;
 import java.util.List;
 
 import com.flipkart.bean.*;
-import com.flipkart.dao.AdminDAOInterface;
-import com.flipkart.dao.AdminDAOImple;
+import com.flipkart.dao.AdminDaoInterface;
+import com.flipkart.dao.AdminDaoOperation;
 
 /**
  * @author Group-A
@@ -47,7 +47,7 @@ public class AdminOperation implements AdminInterface{
 		return instance;
 	}
 	
-	AdminDAOInterface adminDaoOperation =AdminDAOImple.getInstance();
+	AdminDaoInterface adminDaoOperation =AdminDaoOperation.getInstance();
 	
 	
 	public List<Course> viewCourses()
@@ -181,6 +181,17 @@ public class AdminOperation implements AdminInterface{
 	@Override
 	public void setGeneratedReportCardTrue(String Studentid) {
 		adminDaoOperation.setGeneratedReportCardTrue(Studentid);
+		
+	}
+
+	@Override
+	public void deleteCourse(String courseCode, List<Course> courseList) throws CourseNotFoundException {
+		if(!AdminValidator.isValidDropCourse(courseCode, courseList)) {
+			System.out.println("courseCode: " + courseCode + " not present in catalog!");
+			throw new CourseNotFoundException(courseCode);
+		}
+		
+		adminDaoOperation.deleteCourse(courseCode);
 		
 	}
 

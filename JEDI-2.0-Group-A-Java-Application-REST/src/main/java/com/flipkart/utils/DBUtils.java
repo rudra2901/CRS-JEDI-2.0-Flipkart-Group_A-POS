@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.flipkart.utils;
 
 
@@ -22,55 +19,27 @@ import java.util.Properties;
  * Vedant Patel
  *
  */
-
 public class DBUtils {
 	
 	private static Connection connection = null;
-	
+	  static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+	  static final String DB_URL = "jdbc:mysql://localhost:3306/CRSDatabase";
+
+	  //  Database credentials
+	  static final String USER = "root";
+	  static final String PASS = "Rudra@2001";
+
 	public static Connection getConnection() {
-		
-        if (connection != null) {
-        	try {
-        		if (connection.isClosed()) {
-                	//System.out.println("Connection was closed...");
-                	connection = null;
-                	return getConnection();
-                } else {
-                	//System.out.println("Connection good...");
-                	return connection;
-                }
-        	} catch (SQLException e) {
-        		//System.out.println("Error2345: " + e.getMessage());
-        		//e.printStackTrace();
-        		//connection = null;
-        		return getConnection();
-        	}
-        } else {
-            try {
-            	//System.out.println("Connection was NULL...");
-            	Properties prop = new Properties();
-                InputStream inputStream = DBUtils.class.getClassLoader().getResourceAsStream("./config.properties");
-                prop.load(inputStream);
-                String driver = prop.getProperty("driver");
-                String url = prop.getProperty("url");
-                String user = prop.getProperty("user");
-                String password = prop.getProperty("password");
-                //System.out.println(driver + url + user + password);
-                Class.forName(driver);
-                connection = DriverManager.getConnection(url, user, password);
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return connection;
+		try {
+			connection = DriverManager.getConnection(DB_URL,USER,PASS);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		return connection;
         }
 
-    }
 
 
 }

@@ -16,8 +16,10 @@ import com.flipkart.exception.SeatNotAvailableException;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Class for Student Validator 
+ * 
  */
-
 public class StudentValidator {
 
 	/**

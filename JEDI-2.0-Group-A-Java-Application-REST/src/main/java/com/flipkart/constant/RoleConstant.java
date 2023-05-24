@@ -9,8 +9,10 @@ package com.flipkart.constant;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Enumeration class for RoleConstant Types
+ *
  */
-
 public enum RoleConstant {
 	ADMIN,PROFESSOR,STUDENT;
 	

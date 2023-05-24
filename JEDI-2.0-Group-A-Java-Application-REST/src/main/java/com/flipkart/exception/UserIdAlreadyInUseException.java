@@ -10,7 +10,6 @@ package com.flipkart.exception;
  * Vedant Patel
  *
  */
-
 public class UserIdAlreadyInUseException extends Exception{
 	private String userId;
 	

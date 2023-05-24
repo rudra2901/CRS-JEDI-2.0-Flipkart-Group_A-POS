@@ -13,7 +13,6 @@ package com.flipkart.exception;
  * Vedant Patel
  *
  */
-
 public class CourseNotDeletedException extends Exception {
 	
 	private String courseCode;

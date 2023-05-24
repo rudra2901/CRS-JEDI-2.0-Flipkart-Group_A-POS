@@ -13,7 +13,6 @@ package com.flipkart.exception;
  * Vedant Patel
  *
  */
-
 public class StudentNotFoundForApprovalException extends Exception{
 	
 	private String StudentId;

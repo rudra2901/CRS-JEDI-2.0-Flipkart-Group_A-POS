@@ -5,6 +5,7 @@ import com.flipkart.bean.Course;
 import com.flipkart.bean.EnrolledStudent;
 import com.flipkart.bean.RegisteredCourse;
 
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -14,8 +15,10 @@ import com.flipkart.bean.RegisteredCourse;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Class for Professor Validator
+ * 
  */
-
 public class ProfessorValidator {
 	
 	/**

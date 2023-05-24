@@ -6,6 +6,8 @@ import java.util.List;
 
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Grade;
+import com.flipkart.bean.Notification;
+import com.flipkart.constant.PaymentModeConstant;
 
 /**
  * @author Group-A
@@ -16,9 +18,12 @@ import com.flipkart.bean.Grade;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Interface for Registration DAO Operation
  */
 
-public interface RegistrationDAOInterface {
+
+public interface RegistrationDaoInterface {
 	
 	
 	/**
@@ -116,6 +121,15 @@ public interface RegistrationDAOInterface {
 
 
 	public void setPaymentStatus(String studentId) throws SQLException;
+
+
+	public int checkCourseAvailability(String studentId, String courseCode) throws SQLException;
+
+
+	public Notification payFee(String studentId, PaymentModeConstant mode, double fee) throws SQLException;
+
+
+	int checkCourseAvailability(int studentId, String courseCode) throws SQLException; 
 
 	
 }

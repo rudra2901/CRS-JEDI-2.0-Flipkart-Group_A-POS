@@ -9,11 +9,13 @@ package com.flipkart.constant;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * Enumeration class for Mode of Payments
+ *
  */
-
 public enum PaymentModeConstant {
 	
-	CARD_PAYMENT,NET_BANKING, OFFLINE;
+	CREDIT_CARD,NET_BANKING,DEBIT_CARD;
 	
 	/**
 	 * Method to get Mode of Payment
@@ -25,11 +27,11 @@ public enum PaymentModeConstant {
 		switch(value)
 		{
 			case 1:
-				return PaymentModeConstant.CARD_PAYMENT;
+				return PaymentModeConstant.CREDIT_CARD;
 			case 2:
 				return PaymentModeConstant.NET_BANKING;
 			case 3:
-				return PaymentModeConstant.OFFLINE;
+				return PaymentModeConstant.DEBIT_CARD;
 			default:
 				return null;
 				

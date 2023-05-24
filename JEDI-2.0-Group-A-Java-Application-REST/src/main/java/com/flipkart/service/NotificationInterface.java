@@ -9,6 +9,7 @@ import java.util.UUID;
 import com.flipkart.constant.NotificationTypeConstant;
 import com.flipkart.constant.PaymentModeConstant;
 
+
 /**
  * @author Group-A
  * Aaryan Pawar
@@ -19,7 +20,6 @@ import com.flipkart.constant.PaymentModeConstant;
  * Vedant Patel
  *
  */
-
 public interface NotificationInterface {
 
     /**

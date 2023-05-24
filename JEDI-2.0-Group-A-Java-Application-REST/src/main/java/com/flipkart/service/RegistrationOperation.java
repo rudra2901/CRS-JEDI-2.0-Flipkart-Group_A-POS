@@ -1,14 +1,17 @@
 package com.flipkart.service;
 
-import java.sql.SQLException;
+import java.sql.SQLException; 
 import java.util.List;
+
+import org.apache.log4j.Logger;
 
 import com.flipkart.bean.Course;
 import com.flipkart.bean.Notification;
 import com.flipkart.bean.Grade;
 import com.flipkart.constant.PaymentModeConstant;
-import com.flipkart.dao.RegistrationDAOInterface;
-import com.flipkart.dao.RegistrationDAOImple;
+import com.flipkart.dao.RegistrationDaoInterface;
+import com.flipkart.dao.RegistrationDaoOperation;
+import com.flipkart.exception.CourseAlreadyRegisteredException;
 import com.flipkart.exception.CourseLimitExceededException;
 import com.flipkart.exception.CourseNotFoundException;
 import com.flipkart.exception.SeatNotAvailableException;
@@ -23,8 +26,10 @@ import com.flipkart.validator.StudentValidator;
  * Shruti Sharma
  * Vedant Patel
  *
+ *
+ * The Registration Operation provides the business logic for student registration.
+ * 
  */
-
 public class RegistrationOperation implements RegistrationInterface {
 
 	private static volatile RegistrationOperation instance = null;
@@ -46,7 +51,7 @@ public class RegistrationOperation implements RegistrationInterface {
 		return instance;
 	}
 
-	RegistrationDAOInterface registrationDaoInterface = RegistrationDAOImple.getInstance();
+	RegistrationDaoInterface registrationDaoInterface = RegistrationDaoOperation.getInstance();
 
 	/**
 	 * Method to add Course selected by student 
@@ -60,6 +65,36 @@ public class RegistrationOperation implements RegistrationInterface {
 	 * @throws SQLException 
 	 */
 	@Override
+	public boolean checkCourse(String courseCode,String studentId,List<Course> availableCourseList) throws CourseLimitExceededException, CourseAlreadyRegisteredException, SeatNotAvailableException, CourseNotFoundException
+	{
+		
+			try {
+					int response = registrationDaoInterface.checkCourseAvailability(studentId, courseCode);
+					
+					if (response == 0){
+						throw new CourseLimitExceededException(6);
+					}
+					else if (response == 1) {
+						throw new CourseAlreadyRegisteredException(courseCode);
+					}
+					else if (!registrationDaoInterface.seatAvailable(courseCode)) {
+						throw new SeatNotAvailableException(courseCode);
+					} 
+					else if(!StudentValidator.isValidCourseCode(courseCode, availableCourseList)){
+						throw new CourseNotFoundException(courseCode);
+					}	
+					
+					return true;
+					
+			} 
+			catch (SQLException e) {
+				System.out.println(e.getMessage());
+				
+			}
+			
+			return false;
+			
+	}
 	
 	public boolean addCourse(String courseCode, String studentId,List<Course> availableCourseList) throws CourseNotFoundException, CourseLimitExceededException, SeatNotAvailableException, SQLException 
 	{
@@ -168,6 +203,7 @@ public class RegistrationOperation implements RegistrationInterface {
 	@Override
 
 	public boolean getRegistrationStatus(String studentId) throws SQLException {
+		System.out.println("inside service layer");
 		return registrationDaoInterface.getRegistrationStatus(studentId);
 	}
 	
@@ -201,5 +237,65 @@ public class RegistrationOperation implements RegistrationInterface {
 		registrationDaoInterface.setPaymentStatus(studentId);
 		
 	}
+
+	@Override
+	public boolean addCourse(String courseCode, String studentId)
+	{
+
+		try
+		{
+			registrationDaoInterface.addCourse(courseCode, studentId);
+			return true;
+		}
+		catch(SQLException e){
+			System.out.println(e.getMessage());
+		}
+		return false;
+
+
+	}
+
+	@Override
+	public Notification payFee(String studentId, PaymentModeConstant mode, double fee) throws SQLException {
+		try 
+		{
+			return registrationDaoInterface.payFee(studentId, mode, fee);
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+
+		return null;
+		
+	}
+
+//	@Override
+//	public boolean checkCourse(String courseCode, String studentId, List<Course> availableCourseList) throws CourseLimitExceededException, CourseAlreadyRegisteredException, SeatNotAvailableException, CourseNotFoundException {
+//		try {
+//			int response = registrationDaoInterface.checkCourseAvailability(studentId, courseCode);
+//			
+//			if (response == 0){
+//				throw new CourseLimitExceededException(6);
+//			}
+//			else if (response == 1) {
+//				throw new CourseAlreadyRegisteredException(courseCode);
+//			}
+//			else if (!registrationDaoInterface.seatAvailable(courseCode)) {
+//				throw new SeatNotAvailableException(courseCode);
+//			} 
+//			else if(!StudentValidator.isValidCourseCode(courseCode, availableCourseList)){
+//				throw new CourseNotFoundException(courseCode);
+//			}	
+//			
+//			return true;
+//			
+//	} 
+//	catch (SQLException e) {
+//		System.out.println(e.getMessage());
+//		
+//	}
+//	
+//	return false;
+//		
+//	}
 
 }

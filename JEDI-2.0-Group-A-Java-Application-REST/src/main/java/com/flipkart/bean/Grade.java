@@ -13,7 +13,6 @@ package com.flipkart.bean;
  * Vedant Patel
  *
  */
-
 public class Grade 
 {
 	private String crsCode;
