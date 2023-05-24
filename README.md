@@ -10,6 +10,8 @@
 - Shruti Sharma
 - Vedant Patel
 
+# COURSE REGISTRATION SYSTEM
+
 This project focuses on addressing the key challenges associated with course registration, such as managing course information, student details, registration requests, and generating relevant reports. With our system, students can easily browse through available courses, submit registration requests, and track their enrollment status. On the other hand, administrators can effortlessly handle registration requests, allocate classrooms and instructors, and generate comprehensive reports for analysis and decision-making.
 
 Coming to project goals we had to develop a course registration system using java jdbc rest mysql and other technologies to allow students to select courses and register in them using various payement techniques
